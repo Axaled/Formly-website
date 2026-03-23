@@ -22,7 +22,7 @@ export default function DemoPage() {
       <PublicHeader />
       <main className="flex-1">
         {/* Page header */}
-        <section className="bg-gradient-to-b from-secondary/50 to-background py-16 lg:py-20">
+        <section className="bg-gradient-to-b from-secondary/50 to-background pt-16 pb-8 lg:pt-20 lg:pb-10">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
@@ -36,7 +36,7 @@ export default function DemoPage() {
         </section>
 
         {/* Interactive Demo */}
-        <section id="demo" className="py-16 lg:py-20 bg-secondary/30">
+        <section id="demo" className="pt-8 pb-16 lg:pt-10 lg:pb-20 bg-secondary/30 border-y border-border/50">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <DemoAnimation />
           </div>
@@ -76,7 +76,7 @@ export default function DemoPage() {
                 </div>
 
                 <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 h-14 text-base shadow-lg shadow-primary/25">
-                  <Link href="#">
+                  <Link href="https://chromewebstore.google.com/detail/formly/femckmbjhjllgiddklaahihehajaopll?hl=fr" target="_blank" rel="noopener noreferrer">
                     <Download className="mr-2 h-5 w-5" />
                     Installer pour Chrome
                   </Link>

@@ -26,36 +26,32 @@ export function CTASection() {
       <div ref={sectionRef} className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           {/* Badge */}
-          <div className={`mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm text-primary font-medium transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}>
+          <div className={`mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm text-primary font-medium transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}>
             <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
             Essai gratuit
           </div>
 
           {/* Headline */}
-          <h2 className={`text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance transition-all duration-700 delay-100 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}>
+          <h2 className={`text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}>
             Prêt à gagner 85% de temps sur vos saisies ?
           </h2>
 
           {/* Subheadline */}
-          <p className={`mt-6 text-lg text-muted-foreground max-w-2xl mx-auto transition-all duration-700 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}>
-            Rejoignez plus de 500 cabinets de courtage qui utilisent déjà Formly pour automatiser 
-            leurs formulaires d&apos;assurance.
+          <p className={`mt-6 text-lg text-muted-foreground max-w-2xl mx-auto transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}>
+            Simplifiez la gestion de vos dossiers clients et automatisez vos formulaires
+            d&apos;assurance dès aujourd&apos;hui.
           </p>
 
           {/* CTAs */}
-          <div className={`mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}>
+          <div className={`mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}>
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 h-14 text-base shadow-xl shadow-primary/25 transition-all hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-0.5">
-              <Link href="/demo">
+              <Link href="https://chromewebstore.google.com/detail/formly/femckmbjhjllgiddklaahihehajaopll?hl=fr" target="_blank" rel="noopener noreferrer">
                 <Download className="mr-2 h-5 w-5" />
-                Télécharger gratuitement
+                Télécharger maintenant
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="px-8 h-14 text-base border-2 transition-all hover:-translate-y-0.5">
@@ -67,12 +63,11 @@ export function CTASection() {
           </div>
 
           {/* Trust points */}
-          <div className={`mt-12 flex flex-wrap justify-center gap-8 transition-all duration-700 delay-400 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}>
+          <div className={`mt-12 flex flex-wrap justify-center gap-8 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}>
             {trustPoints.map((point, index) => (
-              <div 
-                key={point.text} 
+              <div
+                key={point.text}
                 className="flex items-center gap-2 text-muted-foreground"
                 style={{ transitionDelay: getStaggerDelay(index + 4, 100) }}
               >

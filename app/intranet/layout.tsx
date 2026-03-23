@@ -1,15 +1,36 @@
-import { IntranetSidebar } from "@/components/intranet/sidebar"
+"use client"
 
-export const metadata = {
-  title: "Intranet Admin - Formly",
-  description: "Espace administrateur Formly - Gestion des cabinets, mapping et support.",
-}
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
+import { useAuth } from "@/lib/auth-context"
+import { IntranetSidebar } from "@/components/intranet/sidebar"
 
 export default function IntranetLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const { isAuthenticated, isLoading } = useAuth()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      router.push("/extranet/login")
+    }
+  }, [isAuthenticated, isLoading, router])
+
+  if (isLoading) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-[#1a1f2e] text-white/50 italic">
+        Chargement...
+      </div>
+    )
+  }
+
+  if (!isAuthenticated) {
+    return null
+  }
+
   return (
     <div className="flex h-screen overflow-hidden bg-background">
       <IntranetSidebar />

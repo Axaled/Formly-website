@@ -64,7 +64,7 @@ export function PublicHeader() {
             </Link>
           </Button>
           <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25">
-            <Link href="/demo">
+            <Link href="https://chromewebstore.google.com/detail/formly/femckmbjhjllgiddklaahihehajaopll?hl=fr" target="_blank" rel="noopener noreferrer">
               <Download className="mr-2 h-4 w-4" />
               Télécharger l&apos;extension
             </Link>
@@ -94,7 +94,7 @@ export function PublicHeader() {
                 </Link>
               </Button>
               <Button asChild className="w-full justify-center bg-primary hover:bg-primary/90">
-                <Link href="/demo">
+                <Link href="https://chromewebstore.google.com/detail/formly/femckmbjhjllgiddklaahihehajaopll?hl=fr" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-4 w-4" />
                   Télécharger l&apos;extension
                 </Link>

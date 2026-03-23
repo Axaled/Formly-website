@@ -15,7 +15,7 @@ const guides = [
     title: "Guide de démarrage",
     description: "Installez l'extension et créez votre premier profil client en moins de 5 minutes.",
     steps: [
-      "Téléchargez l'extension depuis le Chrome Web Store",
+      <Link key="step-1" href="https://chromewebstore.google.com/detail/formly/femckmbjhjllgiddklaahihehajaopll?hl=fr" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors underline decoration-primary/30">Téléchargez l&apos;extension depuis le Chrome Web Store</Link>,
       "Connectez-vous avec vos identifiants Formly",
       "Créez votre premier profil client",
       "Rendez-vous sur un portail assureur et cliquez sur 'Remplir'",
@@ -117,7 +117,7 @@ export default function DocumentationPage() {
                 Téléchargez l&apos;extension et commencez à gagner du temps dès aujourd&apos;hui.
               </p>
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25 h-14 px-8">
-                <Link href="/demo">
+                <Link href="https://chromewebstore.google.com/detail/formly/femckmbjhjllgiddklaahihehajaopll?hl=fr" target="_blank" rel="noopener noreferrer">
                   Télécharger l&apos;extension
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

@@ -4,6 +4,7 @@ const footerNavigation = {
   produit: [
     { name: "Démo", href: "/demo" },
     { name: "Tarification", href: "/tarification" },
+    { name: "Extension Chrome", href: "https://chromewebstore.google.com/detail/formly/femckmbjhjllgiddklaahihehajaopll?hl=fr", target: "_blank" },
   ],
   entreprise: [
     { name: "À propos", href: "/a-propos" },
@@ -58,11 +59,15 @@ export function PublicFooter() {
               <h3 className="text-sm font-semibold text-foreground">Produit</h3>
               <ul role="list" className="mt-4 space-y-3">
                 {footerNavigation.produit.map((item) => (
-                  <li key={item.name}>
-                    <Link href={item.href} className="text-sm text-muted-foreground hover:text-foreground transition-smooth">
-                      {item.name}
-                    </Link>
-                  </li>
+                    <li key={item.name}>
+                      <Link 
+                        href={item.href} 
+                        target={"target" in item ? item.target : undefined}
+                        className="text-sm text-muted-foreground hover:text-foreground transition-smooth"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
                 ))}
               </ul>
             </div>

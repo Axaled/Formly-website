@@ -2,6 +2,8 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { useAuth } from "@/lib/auth-context"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -11,6 +13,20 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const { login } = useAuth()
+  const router = useRouter()
+  const [error, setError] = useState("")
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setError("")
+    
+    if (login(email, password)) {
+      router.push("/extranet")
+    } else {
+      setError("Identifiants incorrects.")
+    }
+  }
 
   return (
     <div className="min-h-screen flex">
@@ -30,15 +46,21 @@ export default function LoginPage() {
             Accedez a votre espace courtier pour gerer vos profils clients.
           </p>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            {error && (
+              <div className="p-3 rounded-lg bg-destructive/10 text-destructive text-sm font-medium">
+                {error}
+              </div>
+            )}
             <div className="space-y-2">
-              <Label htmlFor="email">Adresse email</Label>
+              <Label htmlFor="email">Identifiant</Label>
               <Input
                 id="email"
-                type="email"
-                placeholder="vous@cabinet.fr"
+                type="text"
+                placeholder="Votre identifiant"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
 
@@ -56,6 +78,7 @@ export default function LoginPage() {
                   placeholder="Votre mot de passe"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
                 <button
                   type="button"
@@ -73,13 +96,10 @@ export default function LoginPage() {
 
             <Button 
               type="submit" 
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-              asChild
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-12 text-base shadow-lg shadow-primary/25"
             >
-              <Link href="/extranet">
-                Se connecter
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              Se connecter
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </form>
 

@@ -15,6 +15,7 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import { useAuth } from "@/lib/auth-context"
 
 const navigation = [
   { name: "Tableau de bord", href: "/extranet", icon: LayoutDashboard },
@@ -29,6 +30,7 @@ const secondaryNavigation = [
 
 export function ExtranetSidebar() {
   const pathname = usePathname()
+  const { logout } = useAuth()
   const [collapsed, setCollapsed] = useState(false)
 
   return (
@@ -128,11 +130,9 @@ export function ExtranetSidebar() {
               <p className="text-sm font-medium text-sidebar-foreground truncate">Jean Dupont</p>
               <p className="text-xs text-muted-foreground truncate">Cabinet Dupont</p>
             </div>
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-destructive" asChild>
-              <Link href="/">
-                <LogOut className="h-4 w-4" />
-                <span className="sr-only">Deconnexion</span>
-              </Link>
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-destructive" onClick={logout}>
+              <LogOut className="h-4 w-4" />
+              <span className="sr-only">Deconnexion</span>
             </Button>
           </div>
         ) : (

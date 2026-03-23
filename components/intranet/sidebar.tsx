@@ -15,6 +15,7 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import { useAuth } from "@/lib/auth-context"
 
 const navigation = [
   { name: "Dashboard", href: "/intranet", icon: LayoutDashboard },
@@ -26,6 +27,7 @@ const navigation = [
 
 export function IntranetSidebar() {
   const pathname = usePathname()
+  const { logout } = useAuth()
   const [collapsed, setCollapsed] = useState(false)
 
   return (
@@ -105,11 +107,9 @@ export function IntranetSidebar() {
               <p className="text-sm font-medium text-white truncate">Admin Formly</p>
               <p className="text-xs text-white/50 truncate">admin@formly.fr</p>
             </div>
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-white/50 hover:text-red-400 hover:bg-white/10" asChild>
-              <Link href="/">
-                <LogOut className="h-4 w-4" />
-                <span className="sr-only">Deconnexion</span>
-              </Link>
+            <Button variant="ghost" size="icon" className="h-8 w-8 text-white/50 hover:text-red-400 hover:bg-white/10" onClick={logout}>
+              <LogOut className="h-4 w-4" />
+              <span className="sr-only">Deconnexion</span>
             </Button>
           </div>
         ) : (

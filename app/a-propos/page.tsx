@@ -67,7 +67,7 @@ export default function AProposPage() {
                   sur les portails assureurs.
                 </p>
                 <p>
-                  Aujourd&apos;hui, plus de 500 cabinets utilisent Formly pour gagner en moyenne 85% de temps 
+                  Aujourd&apos;hui, Formly accompagne les cabinets de courtage pour gagner en moyenne 85% de temps 
                   sur leurs saisies de formulaires. Et ce n&apos;est que le début.
                 </p>
               </div>

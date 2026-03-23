@@ -29,7 +29,7 @@ export default function TarificationPage() {
 
               {/* Description */}
               <p className="mt-6 text-lg text-muted-foreground leading-8">
-                Notre grille tarifaire est en cours de finalisation. Contactez-nous dès maintenant 
+                Notre grille tarifaire est en cours de finalisation. Contactez-nous dès maintenant
                 pour obtenir un devis personnalisé adapté à la taille de votre cabinet.
               </p>
 
@@ -53,7 +53,7 @@ export default function TarificationPage() {
               <div className="mt-12 rounded-2xl border border-border bg-secondary/30 p-6 text-left">
                 <h3 className="font-semibold text-foreground mb-2">En attendant</h3>
                 <p className="text-muted-foreground text-sm">
-                  Vous pouvez télécharger l&apos;extension gratuitement et commencer à l&apos;utiliser. 
+                  Vous pouvez <Link href="https://chromewebstore.google.com/detail/formly/femckmbjhjllgiddklaahihehajaopll?hl=fr" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">télécharger l&apos;extension</Link> et commencer à l&apos;utiliser.
                   Nous vous contacterons pour discuter des options qui correspondent le mieux à vos besoins.
                 </p>
               </div>
