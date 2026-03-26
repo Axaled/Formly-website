@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url=step1_assures.html" />
+    <title>Simulation Assurance Mockup</title>
+</head>
+<body>
+    <p>Redirecting to <a href="step1_assures.html">Step 1</a>...</p>
+
+<script>
+document.addEventListener('click', function(e) {
+    // Handle .toggle[data-toggle="toggle"]
+    var toggleBtn = e.target.closest('.toggle[data-toggle="toggle"]');
+    if (toggleBtn) {
+        e.preventDefault();
+        var isOff = toggleBtn.classList.contains('off');
+        var checkbox = toggleBtn.querySelector('input[type="checkbox"]');
+        
+        if (isOff) {
+            toggleBtn.classList.remove('off', 'btn-light');
+            toggleBtn.classList.add('btn-primary');
+            if (checkbox) checkbox.checked = true;
+        } else {
+            toggleBtn.classList.add('off', 'btn-light');
+            toggleBtn.classList.remove('btn-primary');
+            if (checkbox) checkbox.checked = false;
+        }
+        
+        if (checkbox && checkbox.id) {
+            var selectId = checkbox.id.replace('-switch', '');
+            var selectEl = document.getElementById(selectId);
+            if (selectEl) {
+                if (selectEl.tagName === 'SELECT') {
+                    selectEl.selectedIndex = isOff ? 1 : 0;
+                    selectEl.dispatchEvent(new Event('change', {bubbles: true}));
+                }
+            }
+        }
+        return;
+    }
+
+    // Handle .btn-group-toggle label logic
+    var labelBtn = e.target.closest('.btn-group-toggle label.btn');
+    if (labelBtn) {
+        var group = labelBtn.closest('.btn-group-toggle');
+        group.querySelectorAll('label.btn').forEach(function(lbl) {
+            lbl.classList.remove('active');
+        });
+        labelBtn.classList.add('active');
+        
+        var radio = labelBtn.querySelector('input[type="radio"]');
+        if (radio && !radio.checked) {
+            radio.checked = true;
+            radio.dispatchEvent(new Event('change', {bubbles: true}));
+        }
+    }
+});
+</script>
+</body>
+
+</html>
