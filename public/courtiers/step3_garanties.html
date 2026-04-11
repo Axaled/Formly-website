@@ -1284,12 +1284,10 @@
                                                 <div class="col form-group text-center">
 
 
-                                                    <select class="form-control d-none hide" <select="" data-switch=""
+                                                    <select class="form-control d-none hide" data-switch=""
                                                         name="vtValeurOptionGarantieE5149510P4857553O8"
-                                                        id="vtValeurOptionGarantieE5149510P4857553O8" onchange="modeGestionFranchise(toAssures[0],true, 1148);
-                                    ">
-                                                        onchange="modeGestionFranchise(toAssures[0],true, 1148);
-                                                        "&gt;
+                                                        id="vtValeurOptionGarantieE5149510P4857553O8"
+                                                        onchange="modeGestionFranchise(toAssures[0],true, 1148);">
 
                                                         <option value="13">Non</option>
                                                         <option value="14" selected="selected">Oui</option>
@@ -3658,6 +3656,74 @@
             }
         });
     </script>
+
+    <!-- ============================================================ -->
+    <!-- Formly Extension Compatibility Script                        -->
+    <!-- Ensures toggle/radio UI updates when the extension fills     -->
+    <!-- the underlying <select data-switch> fields.                  -->
+    <!-- ============================================================ -->
+    <script type="text/javascript">
+    (function () {
+
+        // ── 1. Binary toggle (Oui/Non) ───────────────────────────────────
+        // When the extension sets a value on <select data-switch="">,
+        // mirror that change onto the visible .toggle.btn wrapper so the
+        // button flips to the right state.
+        function syncToggleFromSelect(select) {
+            var opt = select.options[select.selectedIndex];
+            if (!opt) return;
+            var isOui = opt.text.trim().toLowerCase() === 'oui';
+
+            // Find the checkbox whose id is "<selectId>-switch"
+            var checkbox = document.getElementById(select.id + '-switch');
+            if (!checkbox) return;
+
+            var wrapper = checkbox.closest('.toggle.btn');
+            if (wrapper) {
+                checkbox.checked = isOui;
+                // Bootstrap toggle uses the "off" class to show the Non side
+                wrapper.classList.toggle('off', !isOui);
+            }
+        }
+
+        document.querySelectorAll('select[data-switch]').forEach(function (select) {
+            select.addEventListener('change', function () {
+                syncToggleFromSelect(select);
+            });
+        });
+
+        // ── 2. Multi-option radio group (Non / 15% / 33% …) ─────────────
+        // When the extension checks a radio inside a .btn-group-toggle,
+        // add the Bootstrap "active" class to its parent label so the
+        // button appears selected visually.
+        document.querySelectorAll('.btn-group-toggle input[type="radio"]').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                if (!radio.checked) return;
+
+                var group = radio.closest('.btn-group-toggle');
+                if (!group) return;
+
+                // Clear all active labels in the group
+                group.querySelectorAll('label.btn').forEach(function (lbl) {
+                    lbl.classList.remove('active');
+                });
+
+                // Activate the label wrapping the checked radio
+                var parentLabel = radio.closest('label.btn');
+                if (parentLabel) parentLabel.classList.add('active');
+
+                // Keep the hidden <select data-switch> in sync for form submission
+                var selectId = group.getAttribute('data-select');
+                if (selectId) {
+                    var sel = document.getElementById(selectId);
+                    if (sel) sel.value = radio.value;
+                }
+            });
+        });
+
+    })();
+    </script>
+    <!-- ============================================================ -->
 </body>
 
 </html>
