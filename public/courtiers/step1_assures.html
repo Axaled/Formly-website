@@ -422,7 +422,7 @@
                                                 <label class="col-xl-7 col-xxl-5 col-form-label">Nombre d'assurés ?
                                                     <span class="required">*</span></label>
                                                 <div class="col-sm form-group">
-                                                    <select name="vtNbEmprunteurs" id="vtNbEmprunteurs"
+                                                    <select name="vtNbEmprunteurs" id="vtNbEmprunteurs" data-formly-tag="general.borrowers_count"
                                                         class="form-control" onchange="verifNbEmprunteurs();">
                                                         <option value="1" selected="selected">1</option>
                                                         <option value="2">2</option>
@@ -444,7 +444,7 @@
                                                     for="vtPointDeVente">Agence : <span
                                                         class="required">*</span></label>
                                                 <div class="col-xl form-group">
-                                                    <select name="vtPointDeVente" id="vtPointDeVente"
+                                                    <select name="vtPointDeVente" id="vtPointDeVente" data-formly-tag="general.agency"
                                                         class="form-control">
                                                         <option value="0">-</option>
                                                         <option value="75437" selected="selected">GCF COURTAGE </option>
@@ -477,7 +477,7 @@
                                                         <label for="vtCivE0">Civilité : <span
                                                                 class="required">*</span></label>
 
-                                                        <select class="form-control" id="vtCivE0" name="vtCivE0"
+                                                        <select class="form-control" id="vtCivE0" data-formly-tag="borrower.civility" name="vtCivE0"
                                                             autocomplete="honorific-prefix" style="">
                                                             <option value="0">-</option>
                                                             <option value="2350">
@@ -499,7 +499,7 @@
                                                                     value="0">
 
                                                                 <input type="text" class="form-control" name="vtNomE0"
-                                                                    id="vtNomE0" value="" maxlength="50"
+                                                                    id="vtNomE0" data-formly-tag="borrower.last_name" value="" maxlength="50"
                                                                     onchange="this.value=this.value.toUpperCase();"
                                                                     autocomplete="family-name" style="">
                                                             </div>
@@ -514,7 +514,7 @@
                                                                 <div class="input-group">
                                                                     <input type="text" class="form-control"
                                                                         autocomplete="additional-name"
-                                                                        id="vtNomNaissanceE0" name="vtNomNaissanceE0"
+                                                                        id="vtNomNaissanceE0" data-formly-tag="borrower.birth_name" name="vtNomNaissanceE0"
                                                                         value=""
                                                                         onchange="this.value=this.value.toUpperCase();"
                                                                         style="">
@@ -534,7 +534,7 @@
                                                                 <label for="vtPnomE0">Prénom : <span
                                                                         class="required">*</span></label>
                                                                 <input type="text" class="form-control" name="vtPnomE0"
-                                                                    id="vtPnomE0" value="" maxlength="50"
+                                                                    id="vtPnomE0" data-formly-tag="borrower.first_name" value="" maxlength="50"
                                                                     onchange="this.value=this.value.toUpperCase();"
                                                                     autocomplete="given-name" style="">
                                                             </div>
@@ -550,7 +550,7 @@
                                                             Né(e) le : <span class="required">*</span>
                                                         </label>
                                                         <div class="input-group datepicker">
-                                                            <input type="text" id="vtDateNaissanceE0"
+                                                            <input type="text" id="vtDateNaissanceE0" data-formly-tag="borrower.birth_date"
                                                                 name="vtDateNaissanceE0"
                                                                 class="form-control text-center flatpickr-input"
                                                                 autocomplete="bday" data-input=""
@@ -580,7 +580,7 @@
                                                                 data-tip="tip-fumeur-0" data-original-title=""
                                                                 title=""></i>
                                                         </label>
-                                                        <select class="form-control d-none hide" id="vtFumeurE0"
+                                                        <select class="form-control d-none hide" id="vtFumeurE0" data-formly-tag="borrower.smoker"
                                                             name="vtFumeurE0" data-switch="" style="">
                                                             <option value="2354">Non</option>
                                                             <option value="2355">Oui</option>
@@ -926,7 +926,7 @@
                                                         </label>
                                                         <div class="form-group">
                                                             <div class="input-group">
-                                                                <input type="email" name="vtMailE0" id="vtMailE0"
+                                                                <input type="email" name="vtMailE0" id="vtMailE0" data-formly-tag="borrower.email"
                                                                     class="form-control" autocomplete="email" value=""
                                                                     style="">
                                                             </div>
@@ -943,7 +943,7 @@
 
                                                         <div class="form-group">
                                                             <div class="input-group">
-                                                                <input type="tel" name="vtPortE0" id="vtPortE0"
+                                                                <input type="tel" name="vtPortE0" id="vtPortE0" data-formly-tag="borrower.mobile"
                                                                     class="form-control" autocomplete="tel-national"
                                                                     value="">
                                                             </div>
@@ -1039,29 +1039,12 @@
                                                                     résiliation</label>
                                                             </div>
 
-                                                            <div class="custom-control custom-radio">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="velIdTypeAdhesionE0"
-                                                                    id="velIdTypeAdhesionE0_4662" value="4662" style="">
-                                                                <label class="custom-control-label"
-                                                                    for="velIdTypeAdhesionE0_4662">Nouveau prêt</label>
-                                                            </div>
-                                                            <div class="custom-control custom-radio">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="velIdTypeAdhesionE0"
-                                                                    id="velIdTypeAdhesionE0_12613" value="12613">
-                                                                <label class="custom-control-label"
-                                                                    for="velIdTypeAdhesionE0_12613">Résiliation contrat
-                                                                    banque</label>
-                                                            </div>
-                                                            <div class="custom-control custom-radio">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="velIdTypeAdhesionE0"
-                                                                    id="velIdTypeAdhesionE0_12582" value="12582">
-                                                                <label class="custom-control-label"
-                                                                    for="velIdTypeAdhesionE0_12582">Résiliation contrat
-                                                                    en délégation (hors banque)</label>
-                                                            </div>
+                                                            <select class="form-control" name="velIdTypeAdhesionE0" id="velIdTypeAdhesionE0" data-formly-tag="general.subscription_type" data-formly-tag="general.subscription_type">
+                                                                <option value="">Sélectionner</option>
+                                                                <option value="4662">Nouveau prêt</option>
+                                                                <option value="12613">Résiliation contrat banque</option>
+                                                                <option value="12582">Résiliation contrat en délégation (hors banque)</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1127,7 +1110,7 @@
                                                         <label for="vtCivE1">Civilité : <span
                                                                 class="required">*</span></label>
 
-                                                        <select class="form-control" id="vtCivE1" name="vtCivE1"
+                                                        <select class="form-control" id="vtCivE1" data-formly-tag="borrower2.civility" name="vtCivE1"
                                                             autocomplete="honorific-prefix">
                                                             <option value="0">-</option>
                                                             <option value="2350">
@@ -1149,7 +1132,7 @@
                                                                     value="0">
 
                                                                 <input type="text" class="form-control" name="vtNomE1"
-                                                                    id="vtNomE1" value="" maxlength="50"
+                                                                    id="vtNomE1" data-formly-tag="borrower2.last_name" value="" maxlength="50"
                                                                     onchange="this.value=this.value.toUpperCase();"
                                                                     autocomplete="family-name" style="">
                                                             </div>
@@ -1164,7 +1147,7 @@
                                                                 <div class="input-group">
                                                                     <input type="text" class="form-control"
                                                                         autocomplete="additional-name"
-                                                                        id="vtNomNaissanceE1" name="vtNomNaissanceE1"
+                                                                        id="vtNomNaissanceE1" data-formly-tag="borrower2.birth_name" name="vtNomNaissanceE1"
                                                                         value=""
                                                                         onchange="this.value=this.value.toUpperCase();"
                                                                         style="">
@@ -1184,7 +1167,7 @@
                                                                 <label for="vtPnomE1">Prénom : <span
                                                                         class="required">*</span></label>
                                                                 <input type="text" class="form-control" name="vtPnomE1"
-                                                                    id="vtPnomE1" value="" maxlength="50"
+                                                                    id="vtPnomE1" data-formly-tag="borrower2.first_name" value="" maxlength="50"
                                                                     onchange="this.value=this.value.toUpperCase();"
                                                                     autocomplete="given-name" style="">
                                                             </div>
@@ -1200,7 +1183,7 @@
                                                             Né(e) le : <span class="required">*</span>
                                                         </label>
                                                         <div class="input-group datepicker">
-                                                            <input type="text" id="vtDateNaissanceE1"
+                                                            <input type="text" id="vtDateNaissanceE1" data-formly-tag="borrower2.birth_date"
                                                                 name="vtDateNaissanceE1"
                                                                 class="form-control text-center flatpickr-input"
                                                                 autocomplete="bday" data-input=""
@@ -1230,7 +1213,7 @@
                                                                 data-tip="tip-fumeur-1" data-original-title=""
                                                                 title=""></i>
                                                         </label>
-                                                        <select class="form-control d-none hide" id="vtFumeurE1"
+                                                        <select class="form-control d-none hide" id="vtFumeurE1" data-formly-tag="borrower2.smoker"
                                                             name="vtFumeurE1" data-switch="" style="">
                                                             <option value="2354">Non</option>
                                                             <option value="2355">Oui</option>
@@ -1577,7 +1560,7 @@
                                                         </label>
                                                         <div class="form-group">
                                                             <div class="input-group">
-                                                                <input type="email" name="vtMailE1" id="vtMailE1"
+                                                                <input type="email" name="vtMailE1" id="vtMailE1" data-formly-tag="borrower2.email"
                                                                     class="form-control" autocomplete="email" value="">
                                                             </div>
                                                         </div>
@@ -1593,7 +1576,7 @@
 
                                                         <div class="form-group">
                                                             <div class="input-group">
-                                                                <input type="tel" name="vtPortE1" id="vtPortE1"
+                                                                <input type="tel" name="vtPortE1" id="vtPortE1" data-formly-tag="borrower2.mobile"
                                                                     class="form-control" autocomplete="tel-national"
                                                                     value="">
                                                             </div>
@@ -1689,28 +1672,12 @@
                                                                     résiliation</label>
                                                             </div>
 
-                                                            <div class="custom-control custom-radio">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="velIdTypeAdhesionE1"
-                                                                    id="velIdTypeAdhesionE1_4662" value="4662">
-                                                                <label class="custom-control-label"
-                                                                    for="velIdTypeAdhesionE1_4662">Nouveau prêt</label>
-                                                            </div>
-                                                            <div class="custom-control custom-radio">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="velIdTypeAdhesionE1"
-                                                                    id="velIdTypeAdhesionE1_12613" value="12613">
-                                                                <label class="custom-control-label"
-                                                                    for="velIdTypeAdhesionE1_12613">Résiliation contrat
-                                                                    banque</label>
-                                                            </div>
-                                                            <div class="custom-control custom-radio">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="velIdTypeAdhesionE1"
-                                                                    id="velIdTypeAdhesionE1_12582" value="12582">
-                                                                <label class="custom-control-label"
-                                                                    for="velIdTypeAdhesionE1_12582">Résiliation contrat
-                                                                    en délégation (hors banque)</label>
+                                                            <select class="form-control" name="velIdTypeAdhesionE1" id="velIdTypeAdhesionE1" data-formly-tag="general.subscription_type" data-formly-tag="general.subscription_type">
+                                                                <option value="">Sélectionner</option>
+                                                                <option value="4662">Nouveau prêt</option>
+                                                                <option value="12613">Résiliation contrat banque</option>
+                                                                <option value="12582">Résiliation contrat en délégation (hors banque)</option>
+                                                            </select>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1781,7 +1748,7 @@
                                                                 data-tip="tip-type-credit" data-original-title=""
                                                                 title=""></i>
                                                         </label>
-                                                        <select name="vtTypeCredit" id="vtTypeCredit"
+                                                        <select name="vtTypeCredit" id="vtTypeCredit" data-formly-tag="loan.financing_type"
                                                             class="form-control" style="">
                                                             <option value="0" selected="selected">-</option>
                                                             <option value="12768">Immobilier</option>
@@ -1817,7 +1784,7 @@
                                                             <span class="required">*</span>
                                                             <span class="required">*</span>
                                                         </label>
-                                                        <select name="vtObjetDuPret" id="vtObjetDuPret"
+                                                        <select name="vtObjetDuPret" id="vtObjetDuPret" data-formly-tag="loan.purpose"
                                                             class="form-control">
                                                             <option value="0">-</option>
                                                             <option value="2404">Acquisition Résidence Principale (RP)
@@ -1844,7 +1811,7 @@
                                                             <div class="input-group datepicker">
                                                                 <input class="form-control" type="number" min="60"
                                                                     max="100" step="1" value="0"
-                                                                    name="velPourcentImmoPret" id="velPourcentImmoPret"
+                                                                    name="velPourcentImmoPret" id="velPourcentImmoPret" data-formly-tag="loan.real_estate_percentage"
                                                                     disabled="disabled">
                                                                 <div class="input-group-append" data-toggle="">
                                                                     <span class="input-group-text">%</span>
@@ -1911,7 +1878,7 @@
                                                 <label for="vtTypeDuPret0"><span class="text-primary">#1</span> - Type
                                                     de prêt : <span class="required">*</span></label>
                                                 <div class="input-group">
-                                                    <select class="form-control" name="vtTypeDuPret0" id="vtTypeDuPret0"
+                                                    <select class="form-control" name="vtTypeDuPret0" id="vtTypeDuPret0" data-formly-tag="loan_detail.loan_type"
                                                         onchange="traitementChoixTypePret(0);">
                                                         <option value="74">Amortissable</option>
                                                         <option value="75">In-Fine</option>
@@ -1943,7 +1910,7 @@
                                                         class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right devise"
-                                                        name="vtMontant0" id="vtMontant0" value="" im-insert="true"
+                                                        name="vtMontant0" id="vtMontant0" data-formly-tag="loan_detail.amount" value="" im-insert="true"
                                                         style="text-align: right;" placeholder="0">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">€</div>
@@ -1955,7 +1922,7 @@
                                                 <label for="vtTaux0">Taux :<span class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input class="form-control text-right tauxPret" type="text"
-                                                        name="vtTaux0" id="vtTaux0" value="" maxlength="6"
+                                                        name="vtTaux0" id="vtTaux0" data-formly-tag="loan_detail.rate" value="" maxlength="6"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">%</div>
@@ -1967,7 +1934,7 @@
                                                 <label for="vtDuree0">Durée : <span class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right integer"
-                                                        name="vtDuree0" id="vtDuree0" value="" maxlength="3"
+                                                        name="vtDuree0" id="vtDuree0" data-formly-tag="loan_detail.duration" value="" maxlength="3"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">mois</div>
@@ -1980,7 +1947,7 @@
                                                         class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right integer"
-                                                        name="vtDureeDif0" id="vtDureeDif0" maxlength="3" value="0"
+                                                        name="vtDureeDif0" id="vtDureeDif0" data-formly-tag="loan_detail.deferred_period" maxlength="3" value="0"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">mois</div>
@@ -1996,7 +1963,7 @@
                                                 <label for="vtTypeDuPret1"><span class="text-primary">#2</span> - Type
                                                     de prêt : <span class="required">*</span></label>
                                                 <div class="input-group">
-                                                    <select class="form-control" name="vtTypeDuPret1" id="vtTypeDuPret1"
+                                                    <select class="form-control" name="vtTypeDuPret1" id="vtTypeDuPret1" data-formly-tag="loan_detail2.loan_type"
                                                         onchange="traitementChoixTypePret(1);">
                                                         <option value="74">Amortissable</option>
                                                         <option value="75">In-Fine</option>
@@ -2028,7 +1995,7 @@
                                                         class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right devise"
-                                                        name="vtMontant1" id="vtMontant1" value="" im-insert="true"
+                                                        name="vtMontant1" id="vtMontant1" data-formly-tag="loan_detail2.amount" value="" im-insert="true"
                                                         style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">€</div>
@@ -2040,7 +2007,7 @@
                                                 <label for="vtTaux1">Taux :<span class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input class="form-control text-right tauxPret" type="text"
-                                                        name="vtTaux1" id="vtTaux1" value="" maxlength="6"
+                                                        name="vtTaux1" id="vtTaux1" data-formly-tag="loan_detail2.rate" value="" maxlength="6"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">%</div>
@@ -2052,7 +2019,7 @@
                                                 <label for="vtDuree1">Durée : <span class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right integer"
-                                                        name="vtDuree1" id="vtDuree1" value="" maxlength="3"
+                                                        name="vtDuree1" id="vtDuree1" data-formly-tag="loan_detail2.duration" value="" maxlength="3"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">mois</div>
@@ -2065,7 +2032,7 @@
                                                         class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right integer"
-                                                        name="vtDureeDif1" id="vtDureeDif1" maxlength="3" value="0"
+                                                        name="vtDureeDif1" id="vtDureeDif1" data-formly-tag="loan_detail2.deferred_period" maxlength="3" value="0"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">mois</div>
@@ -2081,7 +2048,7 @@
                                                 <label for="vtTypeDuPret2"><span class="text-primary">#3</span> - Type
                                                     de prêt : <span class="required">*</span></label>
                                                 <div class="input-group">
-                                                    <select class="form-control" name="vtTypeDuPret2" id="vtTypeDuPret2"
+                                                    <select class="form-control" name="vtTypeDuPret2" id="vtTypeDuPret2" data-formly-tag="loan_detail3.loan_type"
                                                         onchange="traitementChoixTypePret(2);">
                                                         <option value="74">Amortissable</option>
                                                         <option value="75">In-Fine</option>
@@ -2113,7 +2080,7 @@
                                                         class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right devise"
-                                                        name="vtMontant2" id="vtMontant2" value="" im-insert="true"
+                                                        name="vtMontant2" id="vtMontant2" data-formly-tag="loan_detail3.amount" value="" im-insert="true"
                                                         style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">€</div>
@@ -2125,7 +2092,7 @@
                                                 <label for="vtTaux2">Taux :<span class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input class="form-control text-right tauxPret" type="text"
-                                                        name="vtTaux2" id="vtTaux2" value="" maxlength="6"
+                                                        name="vtTaux2" id="vtTaux2" data-formly-tag="loan_detail3.rate" value="" maxlength="6"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">%</div>
@@ -2137,7 +2104,7 @@
                                                 <label for="vtDuree2">Durée : <span class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right integer"
-                                                        name="vtDuree2" id="vtDuree2" value="" maxlength="3"
+                                                        name="vtDuree2" id="vtDuree2" data-formly-tag="loan_detail3.duration" value="" maxlength="3"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">mois</div>
@@ -2150,7 +2117,7 @@
                                                         class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right integer"
-                                                        name="vtDureeDif2" id="vtDureeDif2" maxlength="3" value="0"
+                                                        name="vtDureeDif2" id="vtDureeDif2" data-formly-tag="loan_detail3.deferred_period" maxlength="3" value="0"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">mois</div>
@@ -2166,7 +2133,7 @@
                                                 <label for="vtTypeDuPret3"><span class="text-primary">#4</span> - Type
                                                     de prêt : <span class="required">*</span></label>
                                                 <div class="input-group">
-                                                    <select class="form-control" name="vtTypeDuPret3" id="vtTypeDuPret3"
+                                                    <select class="form-control" name="vtTypeDuPret3" id="vtTypeDuPret3" data-formly-tag="loan_detail4.loan_type"
                                                         onchange="traitementChoixTypePret(3);">
                                                         <option value="74">Amortissable</option>
                                                         <option value="75">In-Fine</option>
@@ -2198,7 +2165,7 @@
                                                         class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right devise"
-                                                        name="vtMontant3" id="vtMontant3" value="" im-insert="true"
+                                                        name="vtMontant3" id="vtMontant3" data-formly-tag="loan_detail4.amount" value="" im-insert="true"
                                                         style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">€</div>
@@ -2210,7 +2177,7 @@
                                                 <label for="vtTaux3">Taux :<span class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input class="form-control text-right tauxPret" type="text"
-                                                        name="vtTaux3" id="vtTaux3" value="" maxlength="6"
+                                                        name="vtTaux3" id="vtTaux3" data-formly-tag="loan_detail4.rate" value="" maxlength="6"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">%</div>
@@ -2222,7 +2189,7 @@
                                                 <label for="vtDuree3">Durée : <span class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right integer"
-                                                        name="vtDuree3" id="vtDuree3" value="" maxlength="3"
+                                                        name="vtDuree3" id="vtDuree3" data-formly-tag="loan_detail4.duration" value="" maxlength="3"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">mois</div>
@@ -2235,7 +2202,7 @@
                                                         class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right integer"
-                                                        name="vtDureeDif3" id="vtDureeDif3" maxlength="3" value="0"
+                                                        name="vtDureeDif3" id="vtDureeDif3" data-formly-tag="loan_detail4.deferred_period" maxlength="3" value="0"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">mois</div>
@@ -2251,7 +2218,7 @@
                                                 <label for="vtTypeDuPret4"><span class="text-primary">#5</span> - Type
                                                     de prêt : <span class="required">*</span></label>
                                                 <div class="input-group">
-                                                    <select class="form-control" name="vtTypeDuPret4" id="vtTypeDuPret4"
+                                                    <select class="form-control" name="vtTypeDuPret4" id="vtTypeDuPret4" data-formly-tag="loan_detail5.loan_type"
                                                         onchange="traitementChoixTypePret(4);">
                                                         <option value="74">Amortissable</option>
                                                         <option value="75">In-Fine</option>
@@ -2283,7 +2250,7 @@
                                                         class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right devise"
-                                                        name="vtMontant4" id="vtMontant4" value="" im-insert="true"
+                                                        name="vtMontant4" id="vtMontant4" data-formly-tag="loan_detail5.amount" value="" im-insert="true"
                                                         style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">€</div>
@@ -2295,7 +2262,7 @@
                                                 <label for="vtTaux4">Taux :<span class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input class="form-control text-right tauxPret" type="text"
-                                                        name="vtTaux4" id="vtTaux4" value="" maxlength="6"
+                                                        name="vtTaux4" id="vtTaux4" data-formly-tag="loan_detail5.rate" value="" maxlength="6"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">%</div>
@@ -2307,7 +2274,7 @@
                                                 <label for="vtDuree4">Durée : <span class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right integer"
-                                                        name="vtDuree4" id="vtDuree4" value="" maxlength="3"
+                                                        name="vtDuree4" id="vtDuree4" data-formly-tag="loan_detail5.duration" value="" maxlength="3"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">mois</div>
@@ -2320,7 +2287,7 @@
                                                         class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right integer"
-                                                        name="vtDureeDif4" id="vtDureeDif4" maxlength="3" value="0"
+                                                        name="vtDureeDif4" id="vtDureeDif4" data-formly-tag="loan_detail5.deferred_period" maxlength="3" value="0"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">mois</div>
@@ -2336,7 +2303,7 @@
                                                 <label for="vtTypeDuPret5"><span class="text-primary">#6</span> - Type
                                                     de prêt : <span class="required">*</span></label>
                                                 <div class="input-group">
-                                                    <select class="form-control" name="vtTypeDuPret5" id="vtTypeDuPret5"
+                                                    <select class="form-control" name="vtTypeDuPret5" id="vtTypeDuPret5" data-formly-tag="loan_detail6.loan_type"
                                                         onchange="traitementChoixTypePret(5);">
                                                         <option value="74">Amortissable</option>
                                                         <option value="75">In-Fine</option>
@@ -2368,7 +2335,7 @@
                                                         class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right devise"
-                                                        name="vtMontant5" id="vtMontant5" value="" im-insert="true"
+                                                        name="vtMontant5" id="vtMontant5" data-formly-tag="loan_detail6.amount" value="" im-insert="true"
                                                         style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">€</div>
@@ -2380,7 +2347,7 @@
                                                 <label for="vtTaux5">Taux :<span class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input class="form-control text-right tauxPret" type="text"
-                                                        name="vtTaux5" id="vtTaux5" value="" maxlength="6"
+                                                        name="vtTaux5" id="vtTaux5" data-formly-tag="loan_detail6.rate" value="" maxlength="6"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">%</div>
@@ -2392,7 +2359,7 @@
                                                 <label for="vtDuree5">Durée : <span class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right integer"
-                                                        name="vtDuree5" id="vtDuree5" value="" maxlength="3"
+                                                        name="vtDuree5" id="vtDuree5" data-formly-tag="loan_detail6.duration" value="" maxlength="3"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">mois</div>
@@ -2405,7 +2372,7 @@
                                                         class="required">*</span></label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control text-right integer"
-                                                        name="vtDureeDif5" id="vtDureeDif5" maxlength="3" value="0"
+                                                        name="vtDureeDif5" id="vtDureeDif5" data-formly-tag="loan_detail6.deferred_period" maxlength="3" value="0"
                                                         im-insert="true" style="text-align: right;">
                                                     <div class="input-group-append">
                                                         <div class="input-group-text">mois</div>

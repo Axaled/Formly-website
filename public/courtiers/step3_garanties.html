@@ -560,7 +560,7 @@
                                             </div>
                                             <div class="input-group datepicker">
                                                 <!-- maxdate 18 mois -->
-                                                <input type="text" id="vtDateDebutGarantie" name="vtDateDebutGarantie"
+                                                <input type="text" id="vtDateDebutGarantie" data-formly-tag="guarantees.start_date" name="vtDateDebutGarantie"
                                                     class="form-control text-center flatpickr-input"
                                                     autocomplete="false" data-input="" data-maxdate="+365"
                                                     data-mindate="+0" data-jour="vtJourDebutGarantie"
@@ -590,7 +590,7 @@
                                                 :
                                                 <span class="required">*</span>
                                             </label>
-                                            <select name="vtTypeFrac" class="form-control" id="vtTypeFrac">
+                                            <select name="vtTypeFrac" class="form-control" id="vtTypeFrac" data-formly-tag="guarantees.payment_frequency">
                                                 <option value="5">
                                                     Annuel</option>
                                                 <option value="6">

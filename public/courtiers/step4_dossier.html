@@ -567,7 +567,7 @@
                                         <label class="col-sm-6 col-md-12 col-xl-7 col-xxl-5 col-form-label">Nombre de
                                             personnes à assurer ? <span class="required">*</span></label>
                                         <div class="col-sm form-group">
-                                            <select name="vtNbEmprunteurs" id="vtNbEmprunteurs" class="form-control"
+                                            <select name="vtNbEmprunteurs" id="vtNbEmprunteurs" data-formly-tag="general.borrowers_count" class="form-control"
                                                 onchange="verifNbEmprunteurs();">
                                                 <option value="1">1</option>
                                                 <option value="2" selected="selected">2</option>
@@ -590,9 +590,9 @@
                                         <label class="col-xl-4 col-xxl-3 col-form-label" for="vtPointDeVente">Agence :
                                             <span class="required">*</span></label>
                                         <div class="col-xl form-group">
-                                            <select name="vtPointDeVente" id="vtPointDeVente"
+                                            <select name="vtPointDeVente" id="vtPointDeVente" data-formly-tag="general.agency"
                                                 class="form-control select2 select2-hidden-accessible"
-                                                data-select2-id="vtPointDeVente" tabindex="-1" aria-hidden="true">
+                                                data-select2-id="vtPointDeVente" data-formly-tag="general.agency" tabindex="-1" aria-hidden="true">
                                                 <option value="0">-</option>
                                                 <option value="75437" selected="selected" data-select2-id="2">GCF
                                                     COURTAGE</option>
@@ -688,24 +688,10 @@
                                                             L'assuré est-il différent de l'emprunteur ?
                                                         </label>
                                                         <div class="col-sm-4 pt-2 pt-sm-0 text-left text-sm-right">
-                                                            <div
-                                                                class="custom-control custom-radio custom-control-inline">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="vtPresenceAdherentE0"
-                                                                    id="vtPresenceAdherentE0_Oui"
-                                                                    value="vtPresenceAdherentOK">
-                                                                <label class="custom-control-label"
-                                                                    for="vtPresenceAdherentE0_Oui">Oui</label>
-                                                            </div>
-                                                            <div
-                                                                class="custom-control custom-radio custom-control-inline">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="vtPresenceAdherentE0"
-                                                                    id="vtPresenceAdherentE0_Non"
-                                                                    value="vtPresenceAdherentNOK" checked="checked">
-                                                                <label class="custom-control-label"
-                                                                    for="vtPresenceAdherentE0_Non">Non</label>
-                                                            </div>
+                                                            <select class="form-control" name="vtPresenceAdherentE0" id="vtPresenceAdherentE0" data-formly-tag="borrower.is_different_from_borrower">
+                                                                <option value="vtPresenceAdherentNOK" selected="selected">Non</option>
+                                                                <option value="vtPresenceAdherentOK">Oui</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -727,7 +713,7 @@
                                                 <div class="col-sm-2 form-group">
                                                     <label for="vtCivE0">Civilité : <span
                                                             class="required">*</span></label>
-                                                    <select class="form-control input-pu" id="vtCivE0" name="vtCivE0"
+                                                    <select class="form-control input-pu" id="vtCivE0" data-formly-tag="borrower.civility" name="vtCivE0"
                                                         onchange="affichageNomJeuneFille(0 );"
                                                         autocomplete="honorific-prefix" style="">
                                                         <option value="0">-</option>
@@ -742,7 +728,7 @@
                                                             <label for="vbPresenceAdhesionEnLigne0">Nom : <span
                                                                     class="required">*</span></label>
                                                             <input type="text" class="form-control input-pu"
-                                                                name="vtNomE0" autocomplete="family-name" id="vtNomE0"
+                                                                name="vtNomE0" autocomplete="family-name" id="vtNomE0" data-formly-tag="borrower.last_name"
                                                                 onchange="this.value=this.value.toUpperCase();"
                                                                 value="Dupont" style="">
                                                         </div>
@@ -756,7 +742,7 @@
                                                             </label>
                                                             <div class="input-group">
                                                                 <input type="text" class="form-control input-pu"
-                                                                    autocomplete="additional-name" id="vtNomNaissanceE0"
+                                                                    autocomplete="additional-name" id="vtNomNaissanceE0" data-formly-tag="borrower.birth_name"
                                                                     name="vtNomNaissanceE0" value="Dupont"
                                                                     onchange="this.value=this.value.toUpperCase();"
                                                                     style="">
@@ -777,7 +763,7 @@
                                                             <label for="vtPnomE0">Prénom : <span
                                                                     class="required">*</span></label>
                                                             <input type="text" class="form-control input-pu"
-                                                                autocomplete="given-name" name="vtPnomE0" id="vtPnomE0"
+                                                                autocomplete="given-name" name="vtPnomE0" id="vtPnomE0" data-formly-tag="borrower.first_name"
                                                                 value="JEAN LUC"
                                                                 onchange="this.value=this.value.toUpperCase();"
                                                                 style="">
@@ -801,7 +787,7 @@
                                                         Né(e) le : <span class="required">*</span>
                                                     </label>
                                                     <div class="input-group datepicker">
-                                                        <input type="text" id="vtDateNaissanceE0"
+                                                        <input type="text" id="vtDateNaissanceE0" data-formly-tag="borrower.birth_date"
                                                             name="vtDateNaissanceE0"
                                                             class="form-control text-center input-pu flatpickr-input"
                                                             autocomplete="bday" data-input=""
@@ -827,7 +813,7 @@
                                                 <div class="col-sm form-group">
                                                     <label for="velIdPaysNaissanceE0">Pays de naissance : <span
                                                             class="required">*</span></label>
-                                                    <select class="form-control pays" id="velIdPaysNaissanceE0"
+                                                    <select class="form-control pays" id="velIdPaysNaissanceE0" data-formly-tag="borrower.birth_country"
                                                         name="velIdPaysNaissanceE0">
                                                         <option value="0" data-typeverificationcp="0" data-taillecp="0">
                                                             - </option>
@@ -1354,7 +1340,7 @@
                                                     <label for="vtLieuNaissanceE0">Ville de naissance : <span
                                                             class="required">*</span></label>
                                                     <input type="text" class="form-control" name="vtLieuNaissanceE0"
-                                                        id="vtLieuNaissanceE0" value=""
+                                                        id="vtLieuNaissanceE0" data-formly-tag="borrower.birth_city" value=""
                                                         onchange="this.value=this.value.toUpperCase();">
                                                 </div>
                                             </div>
@@ -1617,7 +1603,7 @@
                                                         médicale.
                                                     </div>
 
-                                                    <select class="form-control d-none hide" id="vtFumeurE0"
+                                                    <select class="form-control d-none hide" id="vtFumeurE0" data-formly-tag="borrower.smoker"
                                                         name="vtFumeurE0" data-switch="" style="">
                                                         <option value="2354" selected="selected">Non</option>
                                                         <option value="2355">Oui</option>
@@ -3072,7 +3058,7 @@
 
                                                 </div>
                                                 <div class="col">
-                                                    <select class="form-control d-none hide" id="vtVoyageEtrangerE0"
+                                                    <select class="form-control d-none hide" id="vtVoyageEtrangerE0" data-formly-tag="borrower.foreign_travel"
                                                         name="vtVoyageEtrangerE0"
                                                         data-liste-pays="#vtVoyageEtrangerPaysE0"
                                                         data-velplvoyageetrangeroui="6002" data-switch="">
@@ -3665,7 +3651,7 @@
                                                     <span class="required">*</span></label>
                                                 <div class="col-sm">
                                                     <input class="form-control" type="text" name="vtAdr1E0"
-                                                        id="vtAdr1E0" value=""
+                                                        id="vtAdr1E0" data-formly-tag="borrower.address1" value=""
                                                         onchange="this.value=this.value.toUpperCase();"
                                                         autocomplete="street-address address-line1">
                                                 </div>
@@ -3688,7 +3674,7 @@
                                                         <div class="col-sm">
                                                             <input autocomplete="off"
                                                                 class="form-control codepostal-ac ui-autocomplete-input"
-                                                                type="text" name="vtCodPE0" id="vtCodPE0" value=""
+                                                                type="text" name="vtCodPE0" id="vtCodPE0" data-formly-tag="borrower.postal_code" value=""
                                                                 maxlength="5" data-input-ville="#vtVilleE0">
                                                         </div>
                                                     </div>
@@ -3700,7 +3686,7 @@
                                                                 class="required">*</span></label>
                                                         <div class="col-sm">
                                                             <input autocomplete="address-level2" class="form-control"
-                                                                type="text" name="vtVilleE0" id="vtVilleE0" value=""
+                                                                type="text" name="vtVilleE0" id="vtVilleE0" data-formly-tag="borrower.city" value=""
                                                                 onchange="this.value=this.value.toUpperCase();">
                                                         </div>
                                                     </div>
@@ -4279,7 +4265,7 @@
                                                         :
                                                         <span class="required">*</span>
                                                     </label>
-                                                    <input class="form-control" type="tel" name="vtPortE0" id="vtPortE0"
+                                                    <input class="form-control" type="tel" name="vtPortE0" id="vtPortE0" data-formly-tag="borrower.mobile"
                                                         value="" maxlength="20" autocomplete="tel-national">
 
                                                     <div id="tooltip-vtPortableE0" class="d-none">
@@ -4307,7 +4293,7 @@
                                                 </label>
 
 
-                                                <input type="email" name="vtMailE0" id="vtMailE0" class="form-control"
+                                                <input type="email" name="vtMailE0" id="vtMailE0" data-formly-tag="borrower.email" class="form-control"
                                                     autocomplete="email" value="" style="">
 
                                                 <input type="hidden" name="vtAdresseMailIndisponibleE0"
@@ -4398,24 +4384,10 @@
                                                             L'assuré est-il différent de l'emprunteur ?
                                                         </label>
                                                         <div class="col-sm-4 pt-2 pt-sm-0 text-left text-sm-right">
-                                                            <div
-                                                                class="custom-control custom-radio custom-control-inline">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="vtPresenceAdherentE1"
-                                                                    id="vtPresenceAdherentE1_Oui"
-                                                                    value="vtPresenceAdherentOK">
-                                                                <label class="custom-control-label"
-                                                                    for="vtPresenceAdherentE1_Oui">Oui</label>
-                                                            </div>
-                                                            <div
-                                                                class="custom-control custom-radio custom-control-inline">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="vtPresenceAdherentE1"
-                                                                    id="vtPresenceAdherentE1_Non"
-                                                                    value="vtPresenceAdherentNOK" checked="checked">
-                                                                <label class="custom-control-label"
-                                                                    for="vtPresenceAdherentE1_Non">Non</label>
-                                                            </div>
+                                                            <select class="form-control" name="vtPresenceAdherentE1" id="vtPresenceAdherentE1" data-formly-tag="borrower2.is_different_from_borrower">
+                                                                <option value="vtPresenceAdherentNOK" selected="selected">Non</option>
+                                                                <option value="vtPresenceAdherentOK">Oui</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -4437,7 +4409,7 @@
                                                 <div class="col-sm-2 form-group">
                                                     <label for="vtCivE1">Civilité : <span
                                                             class="required">*</span></label>
-                                                    <select class="form-control input-pu" id="vtCivE1" name="vtCivE1"
+                                                    <select class="form-control input-pu" id="vtCivE1" data-formly-tag="borrower2.civility" name="vtCivE1"
                                                         onchange="affichageNomJeuneFille(1 );"
                                                         autocomplete="honorific-prefix">
                                                         <option value="0">-</option>
@@ -4453,7 +4425,7 @@
                                                                     class="required">*</span></label>
                                                             <div class="input-group"> <input type="text"
                                                                     class="form-control input-pu" name="vtNomE1"
-                                                                    autocomplete="family-name" id="vtNomE1"
+                                                                    autocomplete="family-name" id="vtNomE1" data-formly-tag="borrower2.last_name"
                                                                     onchange="this.value=this.value.toUpperCase();"
                                                                     value="Dupont">
                                                                 <div class="input-group-append">
@@ -4476,7 +4448,7 @@
                                                             </label>
                                                             <div class="input-group">
                                                                 <input type="text" class="form-control input-pu"
-                                                                    autocomplete="additional-name" id="vtNomNaissanceE1"
+                                                                    autocomplete="additional-name" id="vtNomNaissanceE1" data-formly-tag="borrower2.birth_name"
                                                                     name="vtNomNaissanceE1" value="KERMONNACH"
                                                                     onchange="this.value=this.value.toUpperCase();">
                                                                 <div class="input-group-append">
@@ -4496,7 +4468,7 @@
                                                             <label for="vtPnomE1">Prénom : <span
                                                                     class="required">*</span></label>
                                                             <input type="text" class="form-control input-pu"
-                                                                autocomplete="given-name" name="vtPnomE1" id="vtPnomE1"
+                                                                autocomplete="given-name" name="vtPnomE1" id="vtPnomE1" data-formly-tag="borrower2.first_name"
                                                                 value="AMÉLIE"
                                                                 onchange="this.value=this.value.toUpperCase();">
                                                         </div>
@@ -4519,7 +4491,7 @@
                                                         Né(e) le : <span class="required">*</span>
                                                     </label>
                                                     <div class="input-group datepicker">
-                                                        <input type="text" id="vtDateNaissanceE1"
+                                                        <input type="text" id="vtDateNaissanceE1" data-formly-tag="borrower2.birth_date"
                                                             name="vtDateNaissanceE1"
                                                             class="form-control text-center input-pu flatpickr-input"
                                                             autocomplete="bday" data-input=""
@@ -4545,7 +4517,7 @@
                                                 <div class="col-sm form-group">
                                                     <label for="velIdPaysNaissanceE1">Pays de naissance : <span
                                                             class="required">*</span></label>
-                                                    <select class="form-control pays" id="velIdPaysNaissanceE1"
+                                                    <select class="form-control pays" id="velIdPaysNaissanceE1" data-formly-tag="borrower2.birth_country"
                                                         name="velIdPaysNaissanceE1">
                                                         <option value="0" data-typeverificationcp="0" data-taillecp="0">
                                                             - </option>
@@ -5072,7 +5044,7 @@
                                                     <label for="vtLieuNaissanceE1">Ville de naissance : <span
                                                             class="required">*</span></label>
                                                     <input type="text" class="form-control" name="vtLieuNaissanceE1"
-                                                        id="vtLieuNaissanceE1" value=""
+                                                        id="vtLieuNaissanceE1" data-formly-tag="borrower2.birth_city" value=""
                                                         onchange="this.value=this.value.toUpperCase();">
                                                 </div>
                                             </div>
@@ -5335,7 +5307,7 @@
                                                         médicale.
                                                     </div>
 
-                                                    <select class="form-control d-none hide" id="vtFumeurE1"
+                                                    <select class="form-control d-none hide" id="vtFumeurE1" data-formly-tag="borrower2.smoker"
                                                         name="vtFumeurE1" data-switch="">
                                                         <option value="2354" selected="selected">Non</option>
                                                         <option value="2355">Oui</option>
@@ -6574,7 +6546,7 @@
 
                                                 </div>
                                                 <div class="col">
-                                                    <select class="form-control d-none hide" id="vtVoyageEtrangerE1"
+                                                    <select class="form-control d-none hide" id="vtVoyageEtrangerE1" data-formly-tag="borrower2.foreign_travel"
                                                         name="vtVoyageEtrangerE1"
                                                         data-liste-pays="#vtVoyageEtrangerPaysE1"
                                                         data-velplvoyageetrangeroui="6002" data-switch="">
@@ -7167,7 +7139,7 @@
                                                     <span class="required">*</span></label>
                                                 <div class="col-sm">
                                                     <input class="form-control" type="text" name="vtAdr1E1"
-                                                        id="vtAdr1E1" value=""
+                                                        id="vtAdr1E1" data-formly-tag="borrower2.address1" value=""
                                                         onchange="this.value=this.value.toUpperCase();"
                                                         autocomplete="street-address address-line1">
                                                 </div>
@@ -7190,7 +7162,7 @@
                                                         <div class="col-sm">
                                                             <input autocomplete="off"
                                                                 class="form-control codepostal-ac ui-autocomplete-input"
-                                                                type="text" name="vtCodPE1" id="vtCodPE1" value=""
+                                                                type="text" name="vtCodPE1" id="vtCodPE1" data-formly-tag="borrower2.postal_code" value=""
                                                                 maxlength="5" data-input-ville="#vtVilleE1">
                                                         </div>
                                                     </div>
@@ -7202,7 +7174,7 @@
                                                                 class="required">*</span></label>
                                                         <div class="col-sm">
                                                             <input autocomplete="address-level2" class="form-control"
-                                                                type="text" name="vtVilleE1" id="vtVilleE1" value=""
+                                                                type="text" name="vtVilleE1" id="vtVilleE1" data-formly-tag="borrower2.city" value=""
                                                                 onchange="this.value=this.value.toUpperCase();">
                                                         </div>
                                                     </div>
@@ -7781,7 +7753,7 @@
                                                         :
                                                         <span class="required">*</span>
                                                     </label>
-                                                    <input class="form-control" type="tel" name="vtPortE1" id="vtPortE1"
+                                                    <input class="form-control" type="tel" name="vtPortE1" id="vtPortE1" data-formly-tag="borrower2.mobile"
                                                         value="" maxlength="20" autocomplete="tel-national">
 
                                                     <div id="tooltip-vtPortableE1" class="d-none">
@@ -7809,7 +7781,7 @@
                                                 </label>
 
 
-                                                <input type="email" name="vtMailE1" id="vtMailE1" class="form-control"
+                                                <input type="email" name="vtMailE1" id="vtMailE1" data-formly-tag="borrower2.email" class="form-control"
                                                     autocomplete="email" value="">
 
                                                 <input type="hidden" name="vtAdresseMailIndisponibleE1"
@@ -7901,24 +7873,10 @@
                                                             L'assuré est-il différent de l'emprunteur ?
                                                         </label>
                                                         <div class="col-sm-4 pt-2 pt-sm-0 text-left text-sm-right">
-                                                            <div
-                                                                class="custom-control custom-radio custom-control-inline">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="vtPresenceAdherentE2"
-                                                                    id="vtPresenceAdherentE2_Oui"
-                                                                    value="vtPresenceAdherentOK">
-                                                                <label class="custom-control-label"
-                                                                    for="vtPresenceAdherentE2_Oui">Oui</label>
-                                                            </div>
-                                                            <div
-                                                                class="custom-control custom-radio custom-control-inline">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="vtPresenceAdherentE2"
-                                                                    id="vtPresenceAdherentE2_Non"
-                                                                    value="vtPresenceAdherentNOK" checked="checked">
-                                                                <label class="custom-control-label"
-                                                                    for="vtPresenceAdherentE2_Non">Non</label>
-                                                            </div>
+                                                            <select class="form-control" name="vtPresenceAdherentE2" id="vtPresenceAdherentE2" data-formly-tag="borrower3.is_different_from_borrower">
+                                                                <option value="vtPresenceAdherentNOK" selected="selected">Non</option>
+                                                                <option value="vtPresenceAdherentOK">Oui</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -7940,7 +7898,7 @@
                                                 <div class="col-sm-2 form-group">
                                                     <label for="vtCivE2">Civilité : <span
                                                             class="required">*</span></label>
-                                                    <select class="form-control input-pu" id="vtCivE2" name="vtCivE2"
+                                                    <select class="form-control input-pu" id="vtCivE2" data-formly-tag="borrower3.civility" name="vtCivE2"
                                                         onchange="affichageNomJeuneFille(2 );"
                                                         autocomplete="honorific-prefix">
                                                         <option value="0">-</option>
@@ -7956,7 +7914,7 @@
                                                                     class="required">*</span></label>
                                                             <div class="input-group"> <input type="text"
                                                                     class="form-control input-pu" name="vtNomE2"
-                                                                    autocomplete="family-name" id="vtNomE2"
+                                                                    autocomplete="family-name" id="vtNomE2" data-formly-tag="borrower3.last_name"
                                                                     onchange="this.value=this.value.toUpperCase();"
                                                                     value="">
                                                                 <div class="input-group-append">
@@ -7979,7 +7937,7 @@
                                                             </label>
                                                             <div class="input-group">
                                                                 <input type="text" class="form-control input-pu"
-                                                                    autocomplete="additional-name" id="vtNomNaissanceE2"
+                                                                    autocomplete="additional-name" id="vtNomNaissanceE2" data-formly-tag="borrower3.birth_name"
                                                                     name="vtNomNaissanceE2" value=""
                                                                     onchange="this.value=this.value.toUpperCase();">
                                                                 <div class="input-group-append">
@@ -7999,7 +7957,7 @@
                                                             <label for="vtPnomE2">Prénom : <span
                                                                     class="required">*</span></label>
                                                             <input type="text" class="form-control input-pu"
-                                                                autocomplete="given-name" name="vtPnomE2" id="vtPnomE2"
+                                                                autocomplete="given-name" name="vtPnomE2" id="vtPnomE2" data-formly-tag="borrower3.first_name"
                                                                 value=""
                                                                 onchange="this.value=this.value.toUpperCase();">
                                                         </div>
@@ -8022,7 +7980,7 @@
                                                         Né(e) le : <span class="required">*</span>
                                                     </label>
                                                     <div class="input-group datepicker">
-                                                        <input type="text" id="vtDateNaissanceE2"
+                                                        <input type="text" id="vtDateNaissanceE2" data-formly-tag="borrower3.birth_date"
                                                             name="vtDateNaissanceE2"
                                                             class="form-control text-center input-pu flatpickr-input"
                                                             autocomplete="bday" data-input=""
@@ -8048,7 +8006,7 @@
                                                 <div class="col-sm form-group">
                                                     <label for="velIdPaysNaissanceE2">Pays de naissance : <span
                                                             class="required">*</span></label>
-                                                    <select class="form-control pays" id="velIdPaysNaissanceE2"
+                                                    <select class="form-control pays" id="velIdPaysNaissanceE2" data-formly-tag="borrower3.birth_country"
                                                         name="velIdPaysNaissanceE2">
                                                         <option value="0" data-typeverificationcp="0" data-taillecp="0">
                                                             - </option>
@@ -8575,7 +8533,7 @@
                                                     <label for="vtLieuNaissanceE2">Ville de naissance : <span
                                                             class="required">*</span></label>
                                                     <input type="text" class="form-control" name="vtLieuNaissanceE2"
-                                                        id="vtLieuNaissanceE2" value=""
+                                                        id="vtLieuNaissanceE2" data-formly-tag="borrower3.birth_city" value=""
                                                         onchange="this.value=this.value.toUpperCase();">
                                                 </div>
                                             </div>
@@ -8837,7 +8795,7 @@
                                                         médicale.
                                                     </div>
 
-                                                    <select class="form-control d-none hide" id="vtFumeurE2"
+                                                    <select class="form-control d-none hide" id="vtFumeurE2" data-formly-tag="borrower3.smoker"
                                                         name="vtFumeurE2" data-switch="">
                                                         <option value="2354">Non</option>
                                                         <option value="2355">Oui</option>
@@ -9734,7 +9692,7 @@
 
                                                 </div>
                                                 <div class="col">
-                                                    <select class="form-control d-none hide" id="vtVoyageEtrangerE2"
+                                                    <select class="form-control d-none hide" id="vtVoyageEtrangerE2" data-formly-tag="borrower3.foreign_travel"
                                                         name="vtVoyageEtrangerE2"
                                                         data-liste-pays="#vtVoyageEtrangerPaysE2"
                                                         data-velplvoyageetrangeroui="6002" data-switch="">
@@ -10327,7 +10285,7 @@
                                                     <span class="required">*</span></label>
                                                 <div class="col-sm">
                                                     <input class="form-control" type="text" name="vtAdr1E2"
-                                                        id="vtAdr1E2" value=""
+                                                        id="vtAdr1E2" data-formly-tag="borrower3.address1" value=""
                                                         onchange="this.value=this.value.toUpperCase();"
                                                         autocomplete="street-address address-line1">
                                                 </div>
@@ -10350,7 +10308,7 @@
                                                         <div class="col-sm">
                                                             <input autocomplete="off"
                                                                 class="form-control codepostal-ac ui-autocomplete-input"
-                                                                type="text" name="vtCodPE2" id="vtCodPE2" value=""
+                                                                type="text" name="vtCodPE2" id="vtCodPE2" data-formly-tag="borrower3.postal_code" value=""
                                                                 maxlength="5" data-input-ville="#vtVilleE2">
                                                         </div>
                                                     </div>
@@ -10362,7 +10320,7 @@
                                                                 class="required">*</span></label>
                                                         <div class="col-sm">
                                                             <input autocomplete="address-level2" class="form-control"
-                                                                type="text" name="vtVilleE2" id="vtVilleE2" value=""
+                                                                type="text" name="vtVilleE2" id="vtVilleE2" data-formly-tag="borrower3.city" value=""
                                                                 onchange="this.value=this.value.toUpperCase();">
                                                         </div>
                                                     </div>
@@ -10941,7 +10899,7 @@
                                                         :
                                                         <span class="required">*</span>
                                                     </label>
-                                                    <input class="form-control" type="tel" name="vtPortE2" id="vtPortE2"
+                                                    <input class="form-control" type="tel" name="vtPortE2" id="vtPortE2" data-formly-tag="borrower3.mobile"
                                                         value="" maxlength="20" autocomplete="tel-national">
 
                                                     <div id="tooltip-vtPortableE2" class="d-none">
@@ -10969,7 +10927,7 @@
                                                 </label>
 
 
-                                                <input type="email" name="vtMailE2" id="vtMailE2" class="form-control"
+                                                <input type="email" name="vtMailE2" id="vtMailE2" data-formly-tag="borrower3.email" class="form-control"
                                                     autocomplete="email" value="">
 
                                                 <input type="hidden" name="vtAdresseMailIndisponibleE2"
@@ -11060,24 +11018,10 @@
                                                             L'assuré est-il différent de l'emprunteur ?
                                                         </label>
                                                         <div class="col-sm-4 pt-2 pt-sm-0 text-left text-sm-right">
-                                                            <div
-                                                                class="custom-control custom-radio custom-control-inline">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="vtPresenceAdherentE3"
-                                                                    id="vtPresenceAdherentE3_Oui"
-                                                                    value="vtPresenceAdherentOK">
-                                                                <label class="custom-control-label"
-                                                                    for="vtPresenceAdherentE3_Oui">Oui</label>
-                                                            </div>
-                                                            <div
-                                                                class="custom-control custom-radio custom-control-inline">
-                                                                <input class="custom-control-input" type="radio"
-                                                                    name="vtPresenceAdherentE3"
-                                                                    id="vtPresenceAdherentE3_Non"
-                                                                    value="vtPresenceAdherentNOK" checked="checked">
-                                                                <label class="custom-control-label"
-                                                                    for="vtPresenceAdherentE3_Non">Non</label>
-                                                            </div>
+                                                            <select class="form-control" name="vtPresenceAdherentE3" id="vtPresenceAdherentE3" data-formly-tag="borrower4.is_different_from_borrower">
+                                                                <option value="vtPresenceAdherentNOK" selected="selected">Non</option>
+                                                                <option value="vtPresenceAdherentOK">Oui</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -11099,7 +11043,7 @@
                                                 <div class="col-sm-2 form-group">
                                                     <label for="vtCivE3">Civilité : <span
                                                             class="required">*</span></label>
-                                                    <select class="form-control input-pu" id="vtCivE3" name="vtCivE3"
+                                                    <select class="form-control input-pu" id="vtCivE3" data-formly-tag="borrower4.civility" name="vtCivE3"
                                                         onchange="affichageNomJeuneFille(3 );"
                                                         autocomplete="honorific-prefix">
                                                         <option value="0">-</option>
@@ -11115,7 +11059,7 @@
                                                                     class="required">*</span></label>
                                                             <div class="input-group"> <input type="text"
                                                                     class="form-control input-pu" name="vtNomE3"
-                                                                    autocomplete="family-name" id="vtNomE3"
+                                                                    autocomplete="family-name" id="vtNomE3" data-formly-tag="borrower4.last_name"
                                                                     onchange="this.value=this.value.toUpperCase();"
                                                                     value="">
                                                                 <div class="input-group-append">
@@ -11138,7 +11082,7 @@
                                                             </label>
                                                             <div class="input-group">
                                                                 <input type="text" class="form-control input-pu"
-                                                                    autocomplete="additional-name" id="vtNomNaissanceE3"
+                                                                    autocomplete="additional-name" id="vtNomNaissanceE3" data-formly-tag="borrower4.birth_name"
                                                                     name="vtNomNaissanceE3" value=""
                                                                     onchange="this.value=this.value.toUpperCase();">
                                                                 <div class="input-group-append">
@@ -11158,7 +11102,7 @@
                                                             <label for="vtPnomE3">Prénom : <span
                                                                     class="required">*</span></label>
                                                             <input type="text" class="form-control input-pu"
-                                                                autocomplete="given-name" name="vtPnomE3" id="vtPnomE3"
+                                                                autocomplete="given-name" name="vtPnomE3" id="vtPnomE3" data-formly-tag="borrower4.first_name"
                                                                 value=""
                                                                 onchange="this.value=this.value.toUpperCase();">
                                                         </div>
@@ -11181,7 +11125,7 @@
                                                         Né(e) le : <span class="required">*</span>
                                                     </label>
                                                     <div class="input-group datepicker">
-                                                        <input type="text" id="vtDateNaissanceE3"
+                                                        <input type="text" id="vtDateNaissanceE3" data-formly-tag="borrower4.birth_date"
                                                             name="vtDateNaissanceE3"
                                                             class="form-control text-center input-pu flatpickr-input"
                                                             autocomplete="bday" data-input=""
@@ -11207,7 +11151,7 @@
                                                 <div class="col-sm form-group">
                                                     <label for="velIdPaysNaissanceE3">Pays de naissance : <span
                                                             class="required">*</span></label>
-                                                    <select class="form-control pays" id="velIdPaysNaissanceE3"
+                                                    <select class="form-control pays" id="velIdPaysNaissanceE3" data-formly-tag="borrower4.birth_country"
                                                         name="velIdPaysNaissanceE3">
                                                         <option value="0" data-typeverificationcp="0" data-taillecp="0">
                                                             - </option>
@@ -11734,7 +11678,7 @@
                                                     <label for="vtLieuNaissanceE3">Ville de naissance : <span
                                                             class="required">*</span></label>
                                                     <input type="text" class="form-control" name="vtLieuNaissanceE3"
-                                                        id="vtLieuNaissanceE3" value=""
+                                                        id="vtLieuNaissanceE3" data-formly-tag="borrower4.birth_city" value=""
                                                         onchange="this.value=this.value.toUpperCase();">
                                                 </div>
                                             </div>
@@ -11996,7 +11940,7 @@
                                                         médicale.
                                                     </div>
 
-                                                    <select class="form-control d-none hide" id="vtFumeurE3"
+                                                    <select class="form-control d-none hide" id="vtFumeurE3" data-formly-tag="borrower4.smoker"
                                                         name="vtFumeurE3" data-switch="">
                                                         <option value="2354">Non</option>
                                                         <option value="2355">Oui</option>
@@ -12893,7 +12837,7 @@
 
                                                 </div>
                                                 <div class="col">
-                                                    <select class="form-control d-none hide" id="vtVoyageEtrangerE3"
+                                                    <select class="form-control d-none hide" id="vtVoyageEtrangerE3" data-formly-tag="borrower4.foreign_travel"
                                                         name="vtVoyageEtrangerE3"
                                                         data-liste-pays="#vtVoyageEtrangerPaysE3"
                                                         data-velplvoyageetrangeroui="6002" data-switch="">
@@ -13486,7 +13430,7 @@
                                                     <span class="required">*</span></label>
                                                 <div class="col-sm">
                                                     <input class="form-control" type="text" name="vtAdr1E3"
-                                                        id="vtAdr1E3" value=""
+                                                        id="vtAdr1E3" data-formly-tag="borrower4.address1" value=""
                                                         onchange="this.value=this.value.toUpperCase();"
                                                         autocomplete="street-address address-line1">
                                                 </div>
@@ -13509,7 +13453,7 @@
                                                         <div class="col-sm">
                                                             <input autocomplete="off"
                                                                 class="form-control codepostal-ac ui-autocomplete-input"
-                                                                type="text" name="vtCodPE3" id="vtCodPE3" value=""
+                                                                type="text" name="vtCodPE3" id="vtCodPE3" data-formly-tag="borrower4.postal_code" value=""
                                                                 maxlength="5" data-input-ville="#vtVilleE3">
                                                         </div>
                                                     </div>
@@ -13521,7 +13465,7 @@
                                                                 class="required">*</span></label>
                                                         <div class="col-sm">
                                                             <input autocomplete="address-level2" class="form-control"
-                                                                type="text" name="vtVilleE3" id="vtVilleE3" value=""
+                                                                type="text" name="vtVilleE3" id="vtVilleE3" data-formly-tag="borrower4.city" value=""
                                                                 onchange="this.value=this.value.toUpperCase();">
                                                         </div>
                                                     </div>
@@ -14100,7 +14044,7 @@
                                                         :
                                                         <span class="required">*</span>
                                                     </label>
-                                                    <input class="form-control" type="tel" name="vtPortE3" id="vtPortE3"
+                                                    <input class="form-control" type="tel" name="vtPortE3" id="vtPortE3" data-formly-tag="borrower4.mobile"
                                                         value="" maxlength="20" autocomplete="tel-national">
 
                                                     <div id="tooltip-vtPortableE3" class="d-none">
@@ -14128,7 +14072,7 @@
                                                 </label>
 
 
-                                                <input type="email" name="vtMailE3" id="vtMailE3" class="form-control"
+                                                <input type="email" name="vtMailE3" id="vtMailE3" data-formly-tag="borrower4.email" class="form-control"
                                                     autocomplete="email" value="">
 
                                                 <input type="hidden" name="vtAdresseMailIndisponibleE3"
