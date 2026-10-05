@@ -9,17 +9,18 @@ export function Automations() {
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-24">
             <SectionHeading
+              id="automatisations-title"
               index="01"
-              eyebrow="Automatisations IA pour les PME"
+              eyebrow="Ce que j'automatise"
               title={
                 <>
                   Des tâches ennuyeuses, <em>bien faites</em>, sans surveillance permanente.
                 </>
               }
-              description="Chaque ligne est une automatisation déjà livrée, avec le projet où elle tourne. Elles se combinent : un document lu alimente un agent, qui met à jour un outil, qui prévient quelqu'un."
+              description="Chaque ligne est une automatisation que j'ai déjà mise en place, avec le projet où elle tourne. Elles se combinent : un document lu met à jour un outil, qui prévient la bonne personne."
             />
             <Reveal delay={120} className="mt-8 text-sm leading-relaxed text-muted-foreground">
-              <p>Pensées pour des équipes de 2 à 50 personnes, sans DSI, avec les outils qu&apos;elles ont déjà.</p>
+              <p>Avec les outils que vous avez déjà : votre messagerie, votre CRM, vos fichiers, vos portails métier.</p>
             </Reveal>
           </div>
         </div>

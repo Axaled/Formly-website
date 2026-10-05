@@ -2,30 +2,42 @@ import Image from "next/image"
 import { Check } from "lucide-react"
 import { BrowserFrame } from "./browser-frame"
 
-/* ---------- Verrou: real screenshots in a browser frame ---------- */
+/* ---------- Verrou: captures of the public site ---------- */
 export function VerrouVisual() {
   return (
     <div className="grid gap-4 lg:grid-cols-[1.6fr_1fr] lg:items-start">
-      <BrowserFrame url="verrou · étape 4 · vérifier et déposer">
+      <BrowserFrame url="verrou · accueil">
         <Image
-          src="/work/verrou-depot.webp"
-          alt="Interface Verrou, étape 4 : le CERFA 2069-A-SD, l'annexe, les dossiers justificatifs par projet et le mémoire technique, prêts à télécharger."
+          src="/work/verrou-site.webp"
+          alt="Page d'accueil de Verrou : le dossier d'un cabinet, sans le cabinet, avec trois promesses chiffrées et un diagnostic gratuit en cinq minutes."
           width={1600}
           height={1000}
           className="block h-auto w-full"
-          sizes="(min-width: 1024px) 560px, 100vw"
+          sizes="(min-width: 1024px) 680px, 100vw"
         />
       </BrowserFrame>
-      <BrowserFrame url="verrou · estimateur" className="hidden lg:block">
-        <Image
-          src="/work/verrou-landing.webp"
-          alt="Page d'accueil de Verrou avec l'estimateur gratuit du crédit d'impôt recherche."
-          width={1600}
-          height={1000}
-          className="block h-auto w-full"
-          sizes="(min-width: 1024px) 420px, 100vw"
-        />
-      </BrowserFrame>
+      <div className="grid gap-4">
+        <BrowserFrame url="verrou · les quatre étapes">
+          <Image
+            src="/work/verrou-etapes.webp"
+            alt="Section sombre du site Verrou présentant les quatre étapes du dossier."
+            width={1600}
+            height={1000}
+            className="block h-auto w-full"
+            sizes="(min-width: 1024px) 420px, 100vw"
+          />
+        </BrowserFrame>
+        <BrowserFrame url="verrou · pourquoi c'est rapide" className="hidden lg:block">
+          <Image
+            src="/work/verrou-principe.webp"
+            alt="Section illustrée du site Verrou : vos preuves existent déjà, seulement les questions qui manquent, vérifié avant de partir."
+            width={1600}
+            height={1000}
+            className="block h-auto w-full"
+            sizes="(min-width: 1024px) 420px, 100vw"
+          />
+        </BrowserFrame>
+      </div>
     </div>
   )
 }

@@ -14,7 +14,7 @@ export function Contact() {
           Dites-moi ce qui vous prend du temps. On regarde ensemble ce qui peut être <em>automatisé</em>.
         </h2>
         <p className="mt-6 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-          Un premier échange de trente minutes, sans engagement, pour cadrer le besoin et estimer ce que ça rapporte.
+          Un premier échange de trente minutes, sans engagement, pour comprendre votre besoin et estimer ce que ça peut vous faire gagner.
         </p>
       </Reveal>
       <Reveal delay={120} className="mt-12">
@@ -29,7 +29,7 @@ export function Contact() {
           <a href={profile.github} target="_blank" rel="noopener noreferrer" className="pf-link text-foreground">
             GitHub
           </a>
-          , où le code du showroom est public.
+          .
         </p>
       </Reveal>
     </section>

@@ -11,16 +11,17 @@ const visuals = {
 
 export function Work() {
   return (
-    <section id="realisations" className="mx-auto max-w-6xl scroll-mt-14 px-5 py-24 sm:px-8 sm:py-32" aria-labelledby="realisations-title">
+    <section className="mx-auto max-w-6xl px-5 pt-16 pb-24 sm:px-8 sm:pt-24 sm:pb-32" aria-labelledby="realisations-title">
       <SectionHeading
-        index="02"
-        eyebrow="Développement web & design"
+        id="realisations-title"
+        index="03"
+        eyebrow="Réalisations"
         title={
           <>
-            Trois produits, du premier croquis à la <em>mise en ligne</em>.
+            Trois projets, du premier croquis à la <em>mise en ligne</em>.
           </>
         }
-        description="Un SaaS fiscal piloté par des agents, un showroom 3D et une extension Chrome. Trois contextes, la même exigence sur l'interface et la fiabilité."
+        description="Un site et une application pour le crédit d'impôt recherche, un showroom automobile en 3D et une extension Chrome. Trois contextes, la même exigence sur l'interface et la fiabilité."
       />
 
       <div className="mt-16 space-y-24 sm:mt-24 sm:space-y-36">
@@ -43,6 +44,9 @@ export function Work() {
                     {p.name}
                   </h3>
                   <p className="mt-4 text-pretty text-lg leading-snug">{p.summary}</p>
+                  {p.status ? (
+                    <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">{p.status}</p>
+                  ) : null}
                   {p.links.length > 0 ? (
                     <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-1 text-sm">
                       {p.links.map((l) => (

@@ -1,13 +1,16 @@
+import type { Metadata } from "next"
 import { Nav } from "@/components/portfolio/nav"
-import { Hero } from "@/components/portfolio/hero"
-import { Automations } from "@/components/portfolio/automations"
-import { Process } from "@/components/portfolio/process"
-import { ProjectsTeaser } from "@/components/portfolio/projects-teaser"
-import { About } from "@/components/portfolio/about"
+import { Work } from "@/components/portfolio/work"
 import { Contact } from "@/components/portfolio/contact"
 import { Footer } from "@/components/portfolio/footer"
 
-export default function HomePage() {
+export const metadata: Metadata = {
+  title: "Réalisations",
+  description:
+    "Trois projets livrés : un site et une application pour le crédit d'impôt recherche, un showroom automobile en 3D et une extension Chrome pour les courtiers.",
+}
+
+export default function RealisationsPage() {
   return (
     <>
       <a
@@ -18,11 +21,7 @@ export default function HomePage() {
       </a>
       <Nav />
       <main id="contenu">
-        <Hero />
-        <Automations />
-        <Process />
-        <ProjectsTeaser />
-        <About />
+        <Work />
         <Contact />
       </main>
       <Footer />

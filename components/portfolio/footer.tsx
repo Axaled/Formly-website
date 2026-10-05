@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { nav, profile } from "@/lib/portfolio"
 
 export function Footer() {
@@ -9,12 +10,12 @@ export function Footer() {
             {profile.firstName}
             <span className="text-primary">.</span>
           </span>{" "}
-          © {new Date().getFullYear()} · Conçu et codé à la main, sans gabarit.
+          © {new Date().getFullYear()} · {profile.role}
         </p>
         <ul className="flex flex-wrap gap-x-5 gap-y-1 text-muted-foreground">
           {nav.map((n) => (
             <li key={n.href}>
-              <a href={n.href} className="pf-link">{n.label}</a>
+              <Link href={n.href} className="pf-link">{n.label}</Link>
             </li>
           ))}
           <li>

@@ -6,7 +6,8 @@ export function Process() {
   return (
     <section id="methode" className="mx-auto max-w-6xl scroll-mt-14 px-5 py-24 sm:px-8 sm:py-32" aria-labelledby="methode-title">
       <SectionHeading
-        index="03"
+        id="methode-title"
+        index="02"
         eyebrow="Méthode"
         title={
           <>
