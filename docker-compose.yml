@@ -1,0 +1,12 @@
+services:
+  portfolio:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SITE_URL: https://ailance.fr
+    image: ailance/portfolio:latest
+    container_name: portfolio
+    restart: unless-stopped
+    # Only expose on the host loopback; the reverse proxy (Caddy) terminates TLS.
+    ports:
+      - "127.0.0.1:3010:3000"

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Réalisations",
   description:
     "Trois projets livrés : un site et une application pour le crédit d'impôt recherche, un showroom automobile en 3D et une extension Chrome pour les courtiers.",
+  alternates: { canonical: "/realisations" },
 }
 
 export default function RealisationsPage() {
