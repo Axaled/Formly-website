@@ -1,22 +1,31 @@
-import { PublicHeader } from "@/components/public/header"
-import { PublicFooter } from "@/components/public/footer"
-import { HeroSection } from "@/components/public/hero-section"
-import { HowItWorksSection } from "@/components/public/how-it-works-section"
-import { FeaturesSection } from "@/components/public/features-section"
-import { CTASection } from "@/components/public/cta-section"
+import { Nav } from "@/components/portfolio/nav"
+import { Hero } from "@/components/portfolio/hero"
+import { Automations } from "@/components/portfolio/automations"
+import { Work } from "@/components/portfolio/work"
+import { Process } from "@/components/portfolio/process"
+import { About } from "@/components/portfolio/about"
+import { Contact } from "@/components/portfolio/contact"
+import { Footer } from "@/components/portfolio/footer"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <PublicHeader />
-      <main className="flex-1">
-        <HeroSection />
-        <HowItWorksSection />
-        <FeaturesSection />
-
-        <CTASection />
+    <div data-portfolio className="relative min-h-screen overflow-x-clip">
+      <a
+        href="#contenu"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-foreground focus:px-3 focus:py-2 focus:text-sm focus:text-background"
+      >
+        Aller au contenu
+      </a>
+      <Nav />
+      <main id="contenu">
+        <Hero />
+        <Automations />
+        <Work />
+        <Process />
+        <About />
+        <Contact />
       </main>
-      <PublicFooter />
+      <Footer />
     </div>
   )
 }
