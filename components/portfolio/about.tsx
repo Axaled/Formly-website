@@ -5,7 +5,7 @@ import { SectionHeading } from "./section-heading"
 export function About() {
   return (
     <section id="a-propos" className="mx-auto max-w-6xl scroll-mt-14 px-5 py-24 sm:px-8 sm:py-32" aria-labelledby="a-propos-title">
-      <SectionHeading index="04" eyebrow="À propos" title={<>{profile.firstName}, {profile.role.toLowerCase()}.</>} />
+      <SectionHeading index="04" eyebrow="À propos" title={<>{profile.firstName} {profile.lastName}, {profile.role.toLowerCase()}.</>} />
       <div className="mt-12 grid gap-10 lg:grid-cols-12">
         <Reveal delay={100} className="space-y-5 text-pretty text-lg leading-relaxed lg:col-span-7">
           {about.paragraphs.map((p) => (

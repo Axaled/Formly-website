@@ -7,7 +7,7 @@ export function Hero() {
     <section className="mx-auto max-w-6xl px-5 pt-16 sm:px-8 sm:pt-24 lg:pt-28" aria-labelledby="hero-title">
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
-          {profile.firstName} · {profile.role} · {profile.location}
+          {profile.firstName} {profile.lastName} · {profile.role} · {profile.location}
         </p>
       </Reveal>
 

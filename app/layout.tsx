@@ -24,7 +24,7 @@ const display = Newsreader({
   display: 'swap',
 })
 
-const title = `${profile.firstName} — Automatisations IA & développement web pour les PME`
+const title = `${profile.firstName} ${profile.lastName} — Automatisations IA & développement web pour les PME`
 const description =
   "Développeur et designer produit. Je conçois des automatisations IA, des agents et des produits web sur mesure pour les PME : lecture de documents, assistants, saisie automatique, interfaces soignées."
 

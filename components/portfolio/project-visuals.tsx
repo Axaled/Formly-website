@@ -30,111 +30,30 @@ export function VerrouVisual() {
   )
 }
 
-/* ---------- Showroom: stylised 3D stage with colour cycling ---------- */
-const swatches = [
-  { name: "Noir obsidienne", color: "oklch(0.2 0.01 285)", delay: "0s" },
-  { name: "Rouge hyacinthe", color: "oklch(0.55 0.2 25)", delay: "3s" },
-  { name: "Argent high-tech", color: "oklch(0.78 0.02 285)", delay: "6s" },
-]
-
+/* ---------- Showroom: real captures of the deployed app ---------- */
 export function ShowroomVisual() {
   return (
-    <div
-      className="relative aspect-[16/9] overflow-hidden border border-border bg-[radial-gradient(ellipse_80%_60%_at_50%_20%,oklch(0.25_0.02_80/0.35),transparent_70%),linear-gradient(to_bottom,oklch(0.12_0.005_285),oklch(0.08_0.005_285))] "
-      role="img"
-      aria-label="Showroom 3D stylisé : une berline Mercedes dont la couleur change sur un sol en marbre réfléchissant, avec un assistant conversationnel."
-    >
-
-      <svg viewBox="0 0 400 300" className="absolute inset-0 h-full w-full" aria-hidden="true">
-        <defs>
-          <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="oklch(0.22 0.005 285)" />
-            <stop offset="1" stopColor="oklch(0.06 0.005 285)" />
-          </linearGradient>
-          <linearGradient id="reflect" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="white" stopOpacity="0.14" />
-            <stop offset="1" stopColor="white" stopOpacity="0" />
-          </linearGradient>
-          <radialGradient id="spot" cx="0.5" cy="0" r="0.8">
-            <stop offset="0" stopColor="white" stopOpacity="0.22" />
-            <stop offset="1" stopColor="white" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-        {/* floor */}
-        <rect x="0" y="186" width="400" height="114" fill="url(#floor)" />
-        <ellipse cx="200" cy="188" rx="170" ry="4" fill="oklch(0.8 0.1 85)" opacity="0.2" />
-        <rect x="0" y="0" width="400" height="200" fill="url(#spot)" />
-
-        {/* car body */}
-        <g transform="translate(52 96)">
-          <path
-            className="pf-paint"
-            d="M6 78 C 6 70 10 66 20 64 L 58 58 C 78 40 100 28 130 24 C 160 20 196 20 226 28 C 246 34 262 44 276 56 L 288 62 C 294 64 296 70 296 76 L 296 84 C 296 88 293 90 289 90 L 13 90 C 9 90 6 88 6 84 Z"
+    <div className="grid gap-4 lg:grid-cols-[1.6fr_1fr] lg:items-start">
+      <BrowserFrame url="axaled.github.io/Car-showroom">
+        <Image
+          src="/work/showroom-main.webp"
+          alt="Showroom Mercedes 3D : une EQS argent de profil sur la scène sombre, avec l'assistant conversationnel et ses raccourcis à droite."
+          width={1440}
+          height={900}
+          className="block h-auto w-full"
+          sizes="(min-width: 1024px) 680px, 100vw"
+        />
+      </BrowserFrame>
+      <BrowserFrame url="vue intérieure">
+          <Image
+            src="/work/showroom-interior.webp"
+            alt="Vue intérieure de l'EQS : volant, écran Hyperscreen et écrans arrière, depuis la banquette."
+            width={1440}
+            height={900}
+            className="block h-auto w-full"
+            sizes="(min-width: 1024px) 420px, 100vw"
           />
-          <path
-            d="M66 58 C 84 42 104 32 132 29 C 160 26 192 27 220 34 C 236 38 250 46 262 56 Z"
-            fill="oklch(0.28 0.02 240)"
-          />
-          <path d="M 74 57 L 132 30 L 136 56 Z" fill="oklch(0.42 0.03 240)" opacity="0.5" />
-          <path d="M 142 30 L 146 55 L 250 55 C 240 46 226 38 210 34 Z" fill="oklch(0.42 0.03 240)" opacity="0.5" />
-          <path d="M 20 70 L 284 70" stroke="white" strokeOpacity="0.12" strokeWidth="1.5" />
-          <path d="M 64 60 C 110 46 180 42 258 56" stroke="white" strokeOpacity="0.25" strokeWidth="1.2" fill="none" />
-          <path d="M 270 60 C 280 62 288 66 292 72" stroke="oklch(0.95 0.02 90)" strokeWidth="2.5" fill="none" opacity="0.9" />
-          <path d="M 10 72 C 14 70 18 69 24 68" stroke="oklch(0.62 0.2 25)" strokeWidth="2.5" fill="none" opacity="0.9" />
-          <circle cx="70" cy="90" r="19" fill="oklch(0.08 0 0)" />
-          <circle cx="70" cy="90" r="10" fill="oklch(0.3 0.005 285)" />
-          <circle cx="70" cy="90" r="3" fill="oklch(0.6 0.005 285)" />
-          <circle cx="234" cy="90" r="19" fill="oklch(0.08 0 0)" />
-          <circle cx="234" cy="90" r="10" fill="oklch(0.3 0.005 285)" />
-          <circle cx="234" cy="90" r="3" fill="oklch(0.6 0.005 285)" />
-        </g>
-        {/* reflection */}
-        <g transform="translate(52 282) scale(1 -1)" opacity="0.3">
-          <path
-            className="pf-paint"
-            d="M6 78 C 6 70 10 66 20 64 L 58 58 C 78 40 100 28 130 24 C 160 20 196 20 226 28 C 246 34 262 44 276 56 L 288 62 C 294 64 296 70 296 76 L 296 84 C 296 88 293 90 289 90 L 13 90 C 9 90 6 88 6 84 Z"
-          />
-          <circle cx="70" cy="90" r="19" fill="oklch(0.08 0 0)" />
-          <circle cx="234" cy="90" r="19" fill="oklch(0.08 0 0)" />
-        </g>
-        <rect x="0" y="186" width="400" height="114" fill="url(#reflect)" />
-      </svg>
-
-      {/* swatches */}
-      <div className="absolute left-4 top-4 flex flex-col gap-2 sm:left-5 sm:top-5">
-        {swatches.map((s) => (
-          <span key={s.name} className="flex items-center gap-2">
-            <span
-              className="pf-swatch h-5 w-5 rounded-full border border-white/30 text-white"
-              style={{ background: s.color, "--swatch-delay": s.delay } as React.CSSProperties}
-            />
-            <span className="hidden font-mono text-[10px] uppercase tracking-widest text-muted-foreground sm:inline">
-              {s.name}
-            </span>
-          </span>
-        ))}
-      </div>
-
-      {/* model toggle */}
-      <div className="absolute right-4 top-4 flex rounded-full border border-white/15 bg-white/5 p-1 font-mono text-[10px] backdrop-blur sm:right-5 sm:top-5">
-        <span className="rounded-full bg-white/90 px-3 py-1 font-semibold text-black">EQS</span>
-        <span className="px-3 py-1 text-white/70">EQE</span>
-      </div>
-
-      {/* assistant */}
-      <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/15 bg-white/[0.07] p-3 backdrop-blur-xl sm:inset-x-5 sm:bottom-5">
-        <div className="flex items-center gap-2 text-xs">
-          <span className="font-mono text-[10px] uppercase tracking-widest text-white/50">Assistant</span>
-          <span className="text-white/90">Passage en rouge hyacinthe. Vue intérieure ?</span>
-        </div>
-        <div className="mt-2 flex gap-1.5 overflow-hidden">
-          {["Intérieur", "Extérieur", "Couleurs", "EQE"].map((c) => (
-            <span key={c} className="rounded-full border border-white/15 px-2.5 py-1 text-[10px] text-white/70">
-              {c}
-            </span>
-          ))}
-        </div>
-      </div>
+      </BrowserFrame>
     </div>
   )
 }
@@ -148,9 +67,17 @@ const fields = [
   { label: "Quotité", value: "100 %", delay: "2s" },
 ]
 
+const FORMLY_STORE_URL = "https://chromewebstore.google.com/detail/formly/femckmbjhjllgiddklaahihehajaopll?hl=fr"
+
 export function FormlyVisual() {
   return (
-    <div className="relative">
+    <a
+      href={FORMLY_STORE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Formly sur le Chrome Web Store"
+      className="group relative block"
+    >
       <BrowserFrame url="portail-assureur.fr/tarification/emprunteur" className="lg:w-[78%]">
         <div
           className="relative space-y-3 bg-[oklch(0.97_0.003_285)] p-5 text-[oklch(0.25_0.02_250)] sm:p-6"
@@ -200,6 +127,9 @@ export function FormlyVisual() {
           Remplir le formulaire
         </button>
       </div>
-    </div>
+      <span className="pf-link absolute bottom-0 right-0 hidden text-sm text-muted-foreground group-hover:text-foreground lg:inline">
+        Installer depuis le Chrome Web Store ↗
+      </span>
+    </a>
   )
 }

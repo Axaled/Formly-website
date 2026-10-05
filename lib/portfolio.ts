@@ -4,13 +4,14 @@
  */
 
 export const profile = {
-  firstName: "Alex",
+  firstName: "Alexandre",
+  lastName: "Croquette",
   handle: "Axaled",
   role: "Développeur & designer produit",
   tagline: "Automatisations IA pour les PME, produits web et interfaces sur mesure.",
   location: "France · à distance",
   availability: "Disponible pour de nouveaux projets",
-  email: "alexcrqtt@gmail.com",
+  email: "alexandre.croquette@ailance.digital",
   github: "https://github.com/Axaled",
   linkedin: "", // ajoutez votre URL LinkedIn pour afficher le lien
 }
@@ -120,7 +121,7 @@ export const projects: Project[] = [
       "CERFA 2069-A-SD rempli et mémoire technique imprimable",
     ],
     stack: ["Next.js 16", "React 19", "TypeScript", "PostgreSQL", "Drizzle", "Better Auth", "Claude API", "Docker"],
-    links: [],
+    links: [{ label: "Voir le produit", href: "https://verrou.app" }],
     year: "2026",
   },
   {
@@ -136,11 +137,15 @@ export const projects: Project[] = [
     facts: [
       "Deux modèles, EQS et EQE, chargés en GLTF",
       "Teinte de carrosserie changée en direct sur le maillage",
-      "Vue extérieure orbitale et vue intérieure fixe",
-      "Assistant contextuel qui commente et pilote la scène",
+      "Huit angles de caméra et une vue intérieure",
+      "Assistant qui comprend la demande et pilote la scène",
+      "Sélecteur de profil et simulateur pour hésitants à l'électrique",
     ],
     stack: ["React", "Vite", "Three.js", "React Three Fiber", "Drei", "Zustand"],
-    links: [{ label: "Code source", href: "https://github.com/Axaled/Car-showroom" }],
+    links: [
+      { label: "Ouvrir le showroom", href: "https://axaled.github.io/Car-showroom/" },
+      { label: "Code source", href: "https://github.com/Axaled/Car-showroom" },
+    ],
     year: "2026",
   },
   {
@@ -161,7 +166,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "Chrome Extension", "Tailwind", "shadcn/ui"],
     links: [
       {
-        label: "Chrome Web Store",
+        label: "Installer depuis le Chrome Web Store",
         href: "https://chromewebstore.google.com/detail/formly/femckmbjhjllgiddklaahihehajaopll?hl=fr",
       },
     ],

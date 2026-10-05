@@ -287,44 +287,6 @@
   animation-delay: var(--fill-delay, 0ms);
 }
 
-/* Showroom mockup: paint cycles between three colours */
-@keyframes pf-paint {
-  0%,
-  28% {
-    fill: oklch(0.2 0.01 285);
-  }
-  33%,
-  61% {
-    fill: oklch(0.52 0.19 25);
-  }
-  66%,
-  94% {
-    fill: oklch(0.8 0.015 285);
-  }
-  100% {
-    fill: oklch(0.2 0.01 285);
-  }
-}
-.pf-paint {
-  animation: pf-paint 9s ease-in-out infinite;
-}
-@keyframes pf-swatch {
-  0%,
-  28% {
-    outline-color: currentColor;
-  }
-  33%,
-  100% {
-    outline-color: transparent;
-  }
-}
-.pf-swatch {
-  outline: 1.5px solid transparent;
-  outline-offset: 2px;
-  animation: pf-swatch 9s ease-in-out infinite;
-  animation-delay: var(--swatch-delay, 0ms);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
@@ -335,9 +297,7 @@
     transition: none;
   }
   .pf-fill,
-  .pf-check,
-  .pf-paint,
-  .pf-swatch {
+  .pf-check {
     animation: none;
   }
   .pf-fill {

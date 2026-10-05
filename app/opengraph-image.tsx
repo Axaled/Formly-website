@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og"
 import { profile } from "@/lib/portfolio"
 
-export const alt = `${profile.firstName} — Automatisations IA & développement web pour les PME`
+export const alt = `${profile.firstName} ${profile.lastName} — Automatisations IA & développement web pour les PME`
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
@@ -23,7 +23,7 @@ export default function OpenGraphImage() {
       >
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, letterSpacing: 2, textTransform: "uppercase", color: "#6b625a" }}>
           <span>
-            {profile.firstName} · {profile.role}
+            {profile.firstName} {profile.lastName} · {profile.role}
           </span>
           <span>{profile.location}</span>
         </div>
